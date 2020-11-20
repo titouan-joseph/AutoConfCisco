@@ -1,0 +1,33 @@
+{
+    "R1" :
+    {
+      "IPaddr": "127.0.0.1",
+      "port": 5000,
+      "interfaces": [
+        {
+          "interfaceName": "GigabitEthernet1/0",
+          "routerName": "R3",
+          "IPv4": "192.168.1.1",
+          "IPv6": "2001:100:1:2::1/64",
+          "OSPF_area": 1,
+          "OSPF_neighbour": [
+            [
+              "192.168.1.0",
+              "0.0.0.255"
+            ],
+            [
+              "192.168.2.0",
+              "0.0.0.255"
+            ]
+          ]
+        },
+        {
+          "interface": "GigabitEthernet2/0",
+          "routerName": "R3",
+          "IPv4": "192.168.1.2",
+          "IPv6": "2001:100:1:2::2/64"
+        }
+      ]
+    },
+  "R2" : {}
+}
