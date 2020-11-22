@@ -1,0 +1,406 @@
+{
+  "R1": {
+    "IPaddr": "127.0.0.1",
+    "port": 5000,
+    "interfaces": [
+      {
+        "interfaceName": "GigabitEthernet1/0",
+        "toRouter": "R2",
+        "IPv4": [
+          "192.168.2.11",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:2::11/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "GigabitEthernet2/0",
+        "toRouter": "R3",
+        "IPv4": [
+          "192.168.5.12",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:5::12/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "GigabitEthernet3/0",
+        "toRouter": "PE1",
+        "IPv4": [
+          "192.168.1.13",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:1::13/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "GigabitEthernet4/0",
+        "toRouter": "PE2",
+        "IPv4": [
+          "192.168.4.14",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:4::14/64",
+        "OSPF_area": 0
+      }
+    ],
+    "OSPF_id": "1.1.1.1",
+    "OSPF_neighbour": [
+      [
+        "192.168.1.0",
+        "0.0.0.255",
+        "0"
+      ],
+      [
+        "192.168.2.0",
+        "0.0.0.255",
+        "0"
+      ],
+      [
+        "192.168.4.0",
+        "0.0.0.255",
+        "0"
+      ],
+      [
+        "192.168.5.0",
+        "0.0.0.255",
+        "0"
+      ]
+    ]
+  },
+  "R2": {
+    "IPaddr": "127.0.0.1",
+    "port": 5001,
+    "interfaces": [
+      {
+        "interfaceName": "GigabitEthernet1/0",
+        "toRouter": "R1",
+        "IPv4": [
+          "192.168.2.21",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:2::21/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "GigabitEthernet2/0",
+        "toRouter": "R4",
+        "IPv4": [
+          "192.168.7.22",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:7::22/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "GigabitEthernet3/0",
+        "toRouter": "PE3",
+        "IPv4": [
+          "192.168.3.23",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:3::23/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "GigabitEthernet4/0",
+        "toRouter": "PE4",
+        "IPv4": [
+          "192.168.14.24",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:14::24/64",
+        "OSPF_area": 0
+      }
+    ],
+    "OSPF_id": "2.2.2.2",
+    "OSPF_neighbour": [
+      [
+        "192.168.2.0",
+        "0.0.0.255",
+        "0"
+      ],
+      [
+        "192.168.3.0",
+        "0.0.0.255",
+        "0"
+      ],
+      [
+        "192.168.7.0",
+        "0.0.0.255",
+        "0"
+      ],
+      [
+        "192.168.14.0",
+        "0.0.0.255",
+        "0"
+      ]
+    ]
+  },
+  "R3": {
+    "IPaddr": "127.0.0.1",
+    "port": 5002,
+    "interfaces": [
+      {
+        "interfaceName": "GigabitEthernet1/0",
+        "toRouter": "R4",
+        "IPv4": [
+          "192.168.6.31",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:6::31/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "GigabitEthernet2/0",
+        "toRouter": "R1",
+        "IPv4": [
+          "192.168.5.32",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:5::32/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "GigabitEthernet3/0",
+        "toRouter": "PE2",
+        "IPv4": [
+          "192.168.12.33",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:12::33/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "GigabitEthernet4/0",
+        "toRouter": "PE1",
+        "IPv4": [
+          "192.168.11.34",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:11::34/64",
+        "OSPF_area": 0
+      }
+    ],
+    "OSPF_id": "3.3.3.3",
+    "OSPF_neighbour": [
+      [
+        "192.168.5.0",
+        "0.0.0.255",
+        "0"
+      ],
+      [
+        "192.168.6.0",
+        "0.0.0.255",
+        "0"
+      ],
+      [
+        "192.168.11.0",
+        "0.0.0.255",
+        "0"
+      ],
+      [
+        "192.168.13.0",
+        "0.0.0.255",
+        "0"
+      ]
+    ]
+  },
+  "R4": {
+    "IPaddr": "127.0.0.1",
+    "port": 5003,
+    "interfaces": [
+      {
+        "interfaceName": "GigabitEthernet1/0",
+        "toRouter": "R3",
+        "IPv4": [
+          "192.168.6.41",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:6::41/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "GigabitEthernet2/0",
+        "toRouter": "R2",
+        "IPv4": [
+          "192.168.7.42",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:7::42/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "GigabitEthernet3/0",
+        "toRouter": "PE4",
+        "IPv4": [
+          "192.168.8.43",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:8::43/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "GigabitEthernet4/0",
+        "toRouter": "PE3",
+        "IPv4": [
+          "192.168.13.44",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:13::44/64",
+        "OSPF_area": 0
+      }
+    ],
+    "OSPF_id": "4.4.4.4",
+    "OSPF_neighbour": [
+      [
+        "192.168.6.0",
+        "0.0.0.255",
+        "0"
+      ],
+      [
+        "192.168.7.0",
+        "0.0.0.255",
+        "0"
+      ],
+      [
+        "192.168.8.0",
+        "0.0.0.255",
+        "0"
+      ],
+      [
+        "192.168.13.0",
+        "0.0.0.255",
+        "0"
+      ]
+    ]
+  },
+  "PE1": {
+    "IPaddr": "127.0.0.1",
+    "port": 5004,
+    "interfaces": [
+      {
+        "interfaceName": "GigabitEthernet1/0",
+        "toRouter": "R1",
+        "IPv4": [
+          "192.168.1.111",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:1::111/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "GigabitEthernet2/0",
+        "toRouter": "R3",
+        "IPv4": [
+          "192.168.11.112",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:11::112/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "fa0/0",
+        "toRouter": "PC1",
+        "IPv4": [
+          "192.168.100.1",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:100::1/64",
+        "OSPF_area": 0
+      }
+    ],
+    "OSPF_id": "10.10.10.10",
+    "OSPF_neighbour": [
+      [
+        "192.168.100.",
+        "0.0.0.255",
+        "0"
+      ]
+    ]
+  },
+  "PE2": {
+    "IPaddr": "127.0.0.1",
+    "port": 5005,
+    "interfaces": [
+      {
+        "interfaceName": "GigabitEthernet1/0",
+        "toRouter": "R1",
+        "IPv4": [
+          "192.168.4.121",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:4::121/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "GigabitEthernet2/0",
+        "toRouter": "R3",
+        "IPv4": [
+          "192.168.12.122",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:12::122/64",
+        "OSPF_area": 0
+      }
+    ],
+    "OSPF_id": "20.20.20.20",
+    "OSPF_neighbour": []
+  },
+  "PE3": {
+    "IPaddr": "127.0.0.1",
+    "port": 5006,
+    "interfaces": [
+      {
+        "interfaceName": "GigabitEthernet1/0",
+        "toRouter": "R2",
+        "IPv4": [
+          "192.168.3.131",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:3::131/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "GigabitEthernet2/0",
+        "toRouter": "R4",
+        "IPv4": [
+          "192.168.13.132",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:13::132/64",
+        "OSPF_area": 0
+      }
+    ],
+    "OSPF_id": "30.30.30.30",
+    "OSPF_neighbour": []
+  },
+  "PE4": {
+    "IPaddr": "127.0.0.1",
+    "port": 5007,
+    "interfaces": [
+      {
+        "interfaceName": "GigabitEthernet1/0",
+        "toRouter": "R4",
+        "IPv4": [
+          "192.168.8.141",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:8::141/64",
+        "OSPF_area": 0
+      },
+      {
+        "interfaceName": "GigabitEthernet2/0",
+        "toRouter": "R2",
+        "IPv4": [
+          "192.168.14.142",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:14::142/64",
+        "OSPF_area": 0
+      }
+    ],
+    "OSPF_id": "40.40.40.40",
+    "OSPF_neighbour": []
+  }
+}
