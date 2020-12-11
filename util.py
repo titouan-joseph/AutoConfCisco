@@ -9,7 +9,7 @@ class Configuration:
 
     def sendCommand(self, command: str):
         self.socket.send(f"{command}\r".encode('utf-8'))
-        time.sleep(0.1)  # Petite pausse sinon on envoie les commandes trop vite
+        time.sleep(0.1)  # Petite pause sinon on envoie les commandes trop vite
 
     def writeConfig(self):
         print(f"{self.name} : Write configuration")
@@ -85,4 +85,15 @@ class Configuration:
         print(f"{self.name} : Active OSPFv3 on {interface}")
         self.interInInterfaceMode(interface)
         self.sendCommand(f"ipv6 ospf 2 area {OSPF_area}")
+        self.sendCommand("end")
+
+    def activeIPcef(self):
+        print(f"{self.name} : Active MPLS (ip cef)")
+        self.configureTerminal()
+        self.sendCommand("ip cef")
+
+    def activeMPLSonInterface(self, interface):
+        print(f"{self.name} : Active MPLS on {interface}")
+        self.interInInterfaceMode(interface)
+        self.sendCommand("mpls ip")
         self.sendCommand("end")

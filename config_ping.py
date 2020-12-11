@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+"""
+Projet NAS
+Fichier config
+"""
 # ping des interfaces pour test de connexion
 # peu importe où on met le PC, on doit pouvoir tout pinger
 
@@ -22,7 +27,7 @@ def test_ping(ip_list, ad_ip, port):
         time.sleep(2)
         sock.read_until(f"> ping {address} -c 1\r\n".encode('utf-8'))
         result = sock.read_until("\n".encode('utf-8'))
-        if result in [b"Destination", b"route"]:
+        if result in [b"Destination", b"route", b"not reachable", b"timeout"]:
             print(f"WARNING Ping for {address} failed ! ")
             print(result)
         else:

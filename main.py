@@ -1,6 +1,7 @@
 import json
 import socket
 import util
+import threading
 
 
 # On ouvre le fichier pqe c est sympathique
@@ -33,7 +34,7 @@ for routerName, routerConf in conf.items():
     # Change hostname
     config.changeHostname()
 
-    # Activatd IPv6
+    # Activated IPv6
     config.activeIPv6()
 
     # Set OSPF
@@ -43,13 +44,19 @@ for routerName, routerConf in conf.items():
     # Set OSPF neighbour
     config.setNeighbourOSPFv2(routerConf["OSPF_neighbour"])
 
+    # Activated MPLS
+    if routerConf["ipcef"]:
+        config.activeIPcef()
+
     for interface in routerConf["interfaces"]:
         config.setUpIPv4(interface["interfaceName"],
                          interface["IPv4"])
         config.setUpIPv6(interface["interfaceName"],
                          interface["IPv6"])
-        config.activeOSPFv2Interface(interface["interfaceName"],
-                                     interface["OSPF_area"])
+        # config.activeOSPFv2Interface(interface["interfaceName"],
+        #                              interface["OSPF_area"])
         config.activeOSPFv3Interface(interface["interfaceName"],
                                      interface["OSPF_area"])
+        if interface["MPLS"]:
+            config.activeMPLSonInterface(interface["interfaceName"])
     # config.writeConfig()
