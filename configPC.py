@@ -1,5 +1,6 @@
 import json
 import socket
+import time
 
 
 # On ouvre le fichier pqe c est sympathique
@@ -25,4 +26,5 @@ for PCname, PCconfig in conf.items():
     except ConnectionError:
         print(f"Can't connecto to {PCname}")
 
-    PcSocket.send(f"ip {PCconfig['ipv4']} {PCconfig['mask']} {PCconfig['gateway']}\r".encode('utf-8'))
+    PcSocket.send(f"ip {PCconfig['IPv4']} {PCconfig['mask']} {PCconfig['gateway']}\r".encode('utf-8'))
+    time.sleep(0.1)
