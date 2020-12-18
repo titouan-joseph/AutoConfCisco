@@ -4,6 +4,13 @@
     "port": 5000,
     "interfaces": [
       {
+        "interfaceName" : "Loopback0",
+        "IPv4" : [
+          "1.1.1.1",
+          "255.255.255.255"
+        ]
+      },
+      {
         "interfaceName": "GigabitEthernet1/0",
         "toRouter": "R2",
         "IPv4": [
@@ -322,6 +329,28 @@
         "MPLS" : true
       },
       {
+        "interfaceName": "GigabitEthernet3/0",
+        "toRouter": "CE1",
+        "IPv4": [
+          "192.168.201.1",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:201::1/64",
+        "OSPF_area": 0,
+        "MPLS" : false
+      },
+      {
+        "interfaceName": "GigabitEthernet4/0",
+        "toRouter": "CE2",
+        "IPv4": [
+          "192.168.202.1",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:202::1/64",
+        "OSPF_area": 0,
+        "MPLS" : false
+      },
+      {
         "interfaceName": "fa0/0",
         "toRouter": "PC1",
         "IPv4": [
@@ -420,6 +449,17 @@
         "IPv6": "192:168:13::132/64",
         "OSPF_area": 0,
         "MPLS" : true
+      },
+      {
+        "interfaceName": "GigabitEthernet3/0",
+        "toRouter": "CE3",
+        "IPv4": [
+          "192.168.203.1",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:203::1/64",
+        "OSPF_area": 0,
+        "MPLS" : false
       }
     ],
     "OSPF_id": "30.30.30.30",
@@ -464,6 +504,17 @@
         "MPLS" : true
       },
       {
+        "interfaceName": "GigabitEthernet3/0",
+        "toRouter": "CE4",
+        "IPv4": [
+          "192.168.204.1",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:204::1/64",
+        "OSPF_area": 0,
+        "MPLS" : false
+      },
+      {
         "interfaceName": "fa0/0",
         "toRouter": "PC2",
         "IPv4": [
@@ -493,6 +544,132 @@
         "0"
       ]
     ],
-    "ipcef" : true
-  }
+    "ipcef" : true,
+    "BGP" : {
+      "AS" : 1,
+      "neighbor" : [
+        {
+          "AS" : 4,
+          "addr" : "192.168.204.2"
+        }
+      ],
+      "my_networks" : [
+        ["192.168.8.0", "255.255.255.0"],
+        ["192.168.14.0", "255.255.255.0"]
+      ]
+    }
+  },
+    "CE1": {
+      "IPaddr": "127.0.0.1",
+      "port": 5012,
+      "interfaces": [
+        {
+        "interfaceName": "GigabitEthernet1/0",
+        "toRouter": "PE1",
+        "IPv4": [
+          "192.168.201.2",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:201::2/64",
+        "OSPF_area": false ,
+        "MPLS" : false
+      },
+        {
+        "interfaceName": "fa0/0",
+        "toRouter": "LAN1",
+        "IPv4": [
+          "172.16.1.1",
+          "255.255.255.0"
+        ],
+        "IPv6": "172:16:1::1/64",
+        "OSPF_area": false ,
+        "MPLS" : false
+      }
+      ]
+    },
+    "CE2": {
+      "IPaddr": "127.0.0.1",
+      "port": 5013,
+      "interfaces": [
+        {
+        "interfaceName": "GigabitEthernet1/0",
+        "toRouter": "PE1",
+        "IPv4": [
+          "192.168.202.2",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:202::2/64",
+        "OSPF_area": false ,
+        "MPLS" : false
+      },
+        {
+        "interfaceName": "fa0/0",
+        "toRouter": "LAN1",
+        "IPv4": [
+          "172.17.1.1",
+          "255.255.255.0"
+        ],
+        "IPv6": "172:17:1::1/64",
+        "OSPF_area": false ,
+        "MPLS" : false
+      }
+      ]
+    },
+    "CE3": {
+      "IPaddr": "127.0.0.1",
+      "port": 5014,
+      "interfaces": [
+        {
+        "interfaceName": "GigabitEthernet1/0",
+        "toRouter": "PE1",
+        "IPv4": [
+          "192.168.203.2",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:203::2/64",
+        "OSPF_area": false ,
+        "MPLS" : false
+      },
+        {
+        "interfaceName": "fa0/0",
+        "toRouter": "LAN1",
+        "IPv4": [
+          "172.16.2.1",
+          "255.255.255.0"
+        ],
+        "IPv6": "172:16:2::1/64",
+        "OSPF_area": false ,
+        "MPLS" : false
+      }
+      ]
+    },
+    "CE4": {
+      "IPaddr": "127.0.0.1",
+      "port": 5015,
+      "interfaces": [
+        {
+        "interfaceName": "fa0/0",
+        "toRouter": "LAN1",
+        "IPv4": [
+          "172.17.2.1",
+          "255.255.255.0"
+        ],
+        "IPv6": "172:17:2::1/64",
+        "OSPF_area": false ,
+        "MPLS" : false
+      },
+        {
+        "interfaceName": "GigabitEthernet1/0",
+        "toRouter": "PE1",
+        "IPv4": [
+          "192.168.204.2",
+          "255.255.255.0"
+        ],
+        "IPv6": "192:168:204::2/64",
+        "OSPF_area": false ,
+        "MPLS" : false
+      }
+      ]
+    }
 }
+

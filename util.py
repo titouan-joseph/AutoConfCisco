@@ -97,3 +97,22 @@ class Configuration:
         self.interInInterfaceMode(interface)
         self.sendCommand("mpls ip")
         self.sendCommand("end")
+
+    def activeMPBGP(self, as_number):
+        print(f"{self.name} : active MPBGP")
+        self.sendCommand(f"router bgp {as_number}")
+        self.sendCommand("end")
+
+    def setMPBGPneighborIPv4(self,as_number, my_networks, neighbor):
+        print(f"{self.name} : adding neighbor {neighbor} at AS : {as_number}")
+        self.activeMPBGP(as_number)
+        for n in neighbor:
+            self.sendCommand(f"neighbor {n['addr']} remote-as {n['AS']}")
+            self.sendCommand(f"address-family ipv4")
+            self.sendCommand(f"neighbor {n['addr']} activate")
+            self.sendCommand(f"exit")
+        self.sendCommand(f"address-family ipv4")
+        for net in my_networks:
+            self.sendCommand(f"network {net[0]} mask {net[1]}")
+        self.sendCommand("end")
+

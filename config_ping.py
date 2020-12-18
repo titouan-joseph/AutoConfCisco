@@ -27,7 +27,7 @@ def test_ping(ip_list, ad_ip, port):
         time.sleep(2)
         sock.read_until(f"> ping {address} -c 1\r\n".encode('utf-8'))
         result = sock.read_until("\n".encode('utf-8'))
-        if result in [b"Destination", b"route", b"not reachable", b"timeout"]:
+        if result in [b"Destination", b"route", b"not reachable", b"timeout"]:  # A revoir pck c'est pas comme ca qui faut faire. Plus un re.findstr
             print(f"WARNING Ping for {address} failed ! ")
             print(result)
         else:

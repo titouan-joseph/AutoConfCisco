@@ -44,6 +44,18 @@ for routerName, routerConf in conf.items():
     # Set OSPF neighbour
     config.setNeighbourOSPFv2(routerConf["OSPF_neighbour"])
 
+    # Set BGP neighbor
+    try:
+        BGP_conf = routerConf["BGP"]
+    except KeyError:
+        BGP_conf = False
+        print(f"No bgp in {routerName}")
+        continue
+    if BGP_conf:
+        config.setMPBGPneighborIPv4(BGP_conf["AS"],
+                                    BGP_conf["my_networks"],
+                                    BGP_conf["neighbor"])
+
     # Activated MPLS
     if routerConf["ipcef"]:
         config.activeIPcef()
@@ -55,8 +67,9 @@ for routerName, routerConf in conf.items():
                          interface["IPv6"])
         # config.activeOSPFv2Interface(interface["interfaceName"],
         #                              interface["OSPF_area"])
-        config.activeOSPFv3Interface(interface["interfaceName"],
-                                     interface["OSPF_area"])
+        if interface["OSPF_area"]:
+            config.activeOSPFv3Interface(interface["interfaceName"],
+                                            interface["OSPF_area"])
         if interface["MPLS"]:
             config.activeMPLSonInterface(interface["interfaceName"])
     # config.writeConfig()
