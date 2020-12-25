@@ -12,7 +12,7 @@ for routerName, routerConf in conf.items():
     try:
         routerManagementAddr = routerConf["IPaddr"]
     except KeyError:
-        print(f"No IP addresse for {routerName}")
+        print(f"No IP address for {routerName}")
         continue
     try:
         routerManagementPort = routerConf["port"]
@@ -25,7 +25,7 @@ for routerName, routerConf in conf.items():
         routerSocket.connect((routerManagementAddr, routerManagementPort))
         print(f"connect to {routerName}")
     except ConnectionError:
-        print(f"Can't connecto to {routerName}")
+        print(f"Can't connect to {routerName}")
 
     config = util.Configuration(routerSocket, routerName)
     # Enter in router

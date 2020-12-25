@@ -13,16 +13,16 @@ class Configuration:
 
     def writeConfig(self):
         print(f"{self.name} : Write configuration")
-        self.sendCommand("end")  # On evite d'etre dans un mode non voulu
+        self.sendCommand("end")  # On évite d'etre dans un mode non voulu
         self.sendCommand("write")
-        self.sendCommand("")  # Pour envoyer un enter et confirmer l'ecriture du fichier
+        self.sendCommand("")  # Pour envoyer un enter et confirmer l'écriture du fichier
 
     def globalConfigMode(self):
         self.sendCommand("")  # entrer
         self.sendCommand("ena")
 
     def configureTerminal(self):
-        self.sendCommand("end")  # Eviter de se retrouver dans un mode et ne pas exec les commandes
+        self.sendCommand("end")  # éviter de se retrouver dans un mode et ne pas exec les commandes
         self.sendCommand("conf t")
 
     def changeHostname(self):
@@ -103,7 +103,7 @@ class Configuration:
         self.sendCommand(f"router bgp {as_number}")
         self.sendCommand("end")
 
-    def setMPBGPneighborIPv4(self,as_number, my_networks, neighbor):
+    def setMPBGPneighborIPv4(self, as_number, my_networks, neighbor):
         print(f"{self.name} : adding neighbor {neighbor} at AS : {as_number}")
         self.activeMPBGP(as_number)
         for n in neighbor:
@@ -115,4 +115,3 @@ class Configuration:
         for net in my_networks:
             self.sendCommand(f"network {net[0]} mask {net[1]}")
         self.sendCommand("end")
-

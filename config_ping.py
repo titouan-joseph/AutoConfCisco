@@ -15,7 +15,9 @@ def test_ping(ip_list, ad_ip, port):
         sock = telnetlib.Telnet(host=ad_ip, port=port)
         print(f"Connected to the PC address {ad_ip}")
     except ConnectionRefusedError:
-        print(f"Can't connecto to the PC address {ad_ip}")
+        print(f"Can't connect to the PC address {ad_ip}")
+        sock = None
+        exit(1)
 
     # laisse passer le premier "timeout"
     sock.write(f"ping {ip_list[0]} -c 1\n".encode('utf-8'))
@@ -27,7 +29,8 @@ def test_ping(ip_list, ad_ip, port):
         time.sleep(2)
         sock.read_until(f"> ping {address} -c 1\r\n".encode('utf-8'))
         result = sock.read_until("\n".encode('utf-8'))
-        if result in [b"Destination", b"route", b"not reachable", b"timeout"]:  # A revoir pck c'est pas comme ca qui faut faire. Plus un re.findstr
+        error_string = [b"Destination", b"route", b"not reachable", b"timeout"]
+        if any(result in a for a in error_string):
             print(f"WARNING Ping for {address} failed ! ")
             print(result)
         else:
@@ -88,4 +91,3 @@ if __name__ == '__main__':
 
 
     ], "127.0.0.1", 5009)
-
