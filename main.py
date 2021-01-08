@@ -3,7 +3,6 @@ import socket
 import util
 import threading
 
-
 # On ouvre le fichier pqe c est sympathique
 with open("conf.json", "r") as json_file:
     conf = json.load(json_file)
@@ -38,38 +37,39 @@ for routerName, routerConf in conf.items():
     config.activeIPv6()
 
     # Set OSPF
-    config.setOSPFv2(routerConf["OSPF_id"])
-    config.setOSPFv3(routerConf["OSPF_id"])
+    if "OSPF_id" in routerConf:
+        config.setOSPFv2(routerConf["OSPF_id"])
+        config.setOSPFv3(routerConf["OSPF_id"])
 
     # Set OSPF neighbour
-    config.setNeighbourOSPFv2(routerConf["OSPF_neighbour"])
+    if "OSPF_neighbour" in routerConf:
+        config.setNeighbourOSPFv2(routerConf["OSPF_neighbour"])
 
     # Set BGP neighbor
-    try:
+    if "BGP" in routerConf:
         BGP_conf = routerConf["BGP"]
-    except KeyError:
-        BGP_conf = False
-        print(f"No bgp in {routerName}")
-        continue
-    if BGP_conf:
         config.setMPBGPneighborIPv4(BGP_conf["AS"],
                                     BGP_conf["my_networks"],
                                     BGP_conf["neighbor"])
 
     # Activated MPLS
-    if routerConf["ipcef"]:
+    if "ipcef" in routerConf:
         config.activeIPcef()
 
     for interface in routerConf["interfaces"]:
-        config.setUpIPv4(interface["interfaceName"],
-                         interface["IPv4"])
-        config.setUpIPv6(interface["interfaceName"],
-                         interface["IPv6"])
+        if "IPv4" in interface:
+            config.setUpIPv4(interface["interfaceName"],
+                             interface["IPv4"])
+
+        if "IPv6" in interface:
+            config.setUpIPv6(interface["interfaceName"],
+                             interface["IPv6"])
+
         # config.activeOSPFv2Interface(interface["interfaceName"],
         #                              interface["OSPF_area"])
-        if interface["OSPF_area"]:
+        if "OSPF_area" in interface:
             config.activeOSPFv3Interface(interface["interfaceName"],
-                                            interface["OSPF_area"])
-        if interface["MPLS"]:
+                                         interface["OSPF_area"])
+        if "MPLS" in interface:
             config.activeMPLSonInterface(interface["interfaceName"])
     # config.writeConfig()
