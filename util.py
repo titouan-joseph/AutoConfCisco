@@ -101,7 +101,6 @@ class Configuration:
     def activeMPBGP(self, as_number):
         print(f"{self.name} : active MPBGP")
         self.sendCommand(f"router bgp {as_number}")
-        self.sendCommand("end")
 
     def setMPBGPneighborIPv4(self, as_number, my_networks, neighbor):
         print(f"{self.name} : adding neighbor {neighbor} at AS : {as_number}")
