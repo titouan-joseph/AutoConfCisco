@@ -1,7 +1,7 @@
 {
   "R1": {
     "IPaddr": "127.0.0.1",
-    "port": 5001,
+    "port": 5000,
     "interfaces": [
       {
         "interfaceName" : "Loopback0",
@@ -82,7 +82,7 @@
   },
   "R2": {
     "IPaddr": "127.0.0.1",
-    "port": 5002,
+    "port": 5001,
     "interfaces": [
       {
         "interfaceName" : "Loopback0",
@@ -163,7 +163,7 @@
   },
   "R3": {
     "IPaddr": "127.0.0.1",
-    "port": 5003,
+    "port": 5002,
     "interfaces": [
       {
         "interfaceName" : "Loopback0",
@@ -244,7 +244,7 @@
   },
   "R4": {
     "IPaddr": "127.0.0.1",
-    "port": 5004,
+    "port": 5003,
     "interfaces": [
       {
         "interfaceName" : "Loopback0",
@@ -325,7 +325,7 @@
   },
   "PE1": {
     "IPaddr": "127.0.0.1",
-    "port": 5005,
+    "port": 5004,
     "interfaces": [
       {
         "interfaceName" : "Loopback0",
@@ -429,7 +429,7 @@
   },
   "PE2": {
     "IPaddr": "127.0.0.1",
-    "port": 5006,
+    "port": 5005,
     "interfaces": [
       {
         "interfaceName" : "Loopback0",
@@ -478,7 +478,7 @@
   },
   "PE3": {
     "IPaddr": "127.0.0.1",
-    "port": 5007,
+    "port": 5006,
     "interfaces": [
       {
         "interfaceName" : "Loopback0",
@@ -551,7 +551,7 @@
   },
   "PE4": {
     "IPaddr": "127.0.0.1",
-    "port": 5008,
+    "port": 5007,
     "interfaces": [
       {
         "interfaceName" : "Loopback0",
@@ -640,7 +640,7 @@
   },
     "CE1": {
       "IPaddr": "127.0.0.1",
-      "port": 5013,
+      "port": 5012,
       "interfaces": [
         {
         "interfaceName" : "Loopback0",
@@ -683,7 +683,7 @@
     },
     "CE2": {
       "IPaddr": "127.0.0.1",
-      "port": 5014,
+      "port": 5013,
       "interfaces": [
         {
         "interfaceName" : "Loopback0",
@@ -726,7 +726,7 @@
     },
     "CE3": {
       "IPaddr": "127.0.0.1",
-      "port": 5015,
+      "port": 5014,
       "interfaces": [
         {
         "interfaceName" : "Loopback0",
@@ -769,7 +769,7 @@
     },
     "CE4": {
       "IPaddr": "127.0.0.1",
-      "port": 5016,
+      "port": 5015,
       "interfaces": [
         {
         "interfaceName" : "Loopback0",
