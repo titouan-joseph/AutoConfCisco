@@ -25,6 +25,14 @@ class Configuration:
         self.sendCommand("end")  # éviter de se retrouver dans un mode et ne pas exec les commandes
         self.sendCommand("conf t")
 
+    def eraseRunningConfiguration(self):
+        print(f"{self.name} : erase running configuration")
+        self.globalConfigMode()
+        self.configureTerminal()
+        with open("default.cfg", "r") as default_config:
+            for line in default_config.readlines():
+                self.sendCommand(line)
+
     def changeHostname(self):
         self.configureTerminal()
         print(f"{self.name} : Change hostname \n")

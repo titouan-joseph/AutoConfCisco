@@ -6,3 +6,5 @@ Auto configuration de routeur en poussant la configuration avec telnet
  - [ ] BGP
  - [X] MPLS - LDP
  - [ ] VRF
+ - [X] Multithread
+ - [X] Configuration de router / protocol en particulier

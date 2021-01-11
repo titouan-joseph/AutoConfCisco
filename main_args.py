@@ -6,6 +6,12 @@ import socket
 
 
 def pushOne(configurator, config, arguments, confugure_all):
+
+    # Erase running configuration
+    if arguments.erase:
+        configurator.eraseRunningConfiguration()
+        return
+
     # Enter in router
     configurator.globalConfigMode()
 
@@ -74,11 +80,14 @@ if __name__ == '__main__':
     parser.add_argument("--bgp", "-b", help="Configure only BGP", action='store_true')
     parser.add_argument("--mpls", "-m", help="Configure only MPLS", action='store_true')
     parser.add_argument("--write", "-w", help="Write configuration att the end", action='store_true')
+    parser.add_argument("--erase", "-e", help="Erase running configuration with default.cfg", action="store_true")
     parser.add_argument("--interface", "--int", "-i", help="Configure only one interface, or all interface with <all>")
     args = parser.parse_args()
 
     if not args.ospf and not args.bgp and not args.mpls:
         all_protocol = True
+    if args.erase:
+        all_protocol = False
 
     with open(args.jsonFile, "r") as file:
         conf = json.load(file)
