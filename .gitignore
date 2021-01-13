@@ -1,1 +1,6 @@
 .idea
+__pycache__
+*.log
+*_log.txt
+*.pcap
+*_stdout.txt
