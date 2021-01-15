@@ -125,5 +125,5 @@ if __name__ == '__main__':
         threadList.append(thread)
         thread.start()
 
-for th in threadList:
-    th.join()
+    for th in threadList:
+        th.join()

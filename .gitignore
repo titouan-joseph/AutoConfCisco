@@ -4,3 +4,6 @@ __pycache__
 *_log.txt
 *.pcap
 *_stdout.txt
+c7200*
+ubridge.log
+lit*
