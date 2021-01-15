@@ -6,7 +6,6 @@ import socket
 
 
 def pushOne(configurator, config, arguments, confugure_all):
-
     # Erase running configuration
     if arguments.erase:
         configurator.eraseRunningConfiguration()
@@ -32,17 +31,17 @@ def pushOne(configurator, config, arguments, confugure_all):
         if "OSPF_neighbour" in config:
             configurator.setNeighbourOSPFv2(config["OSPF_neighbour"])
 
-        # Set BGP neighbor
-        if "BGP" in config:
-            BGP_conf = config["BGP"]
-            configurator.setMPBGPneighborIPv4(BGP_conf["AS"],
-                                              BGP_conf["my_networks"],
-                                              BGP_conf["neighbor"])
-
         for interface in config["interfaces"]:
             if "OSPF_area" in interface:
                 configurator.activeOSPFv3Interface(interface["interfaceName"],
-                                             interface["OSPF_area"])
+                                                   interface["OSPF_area"])
+
+    # BGP
+    if "BGP" in config:
+        BGP_conf = config["BGP"]
+        configurator.setMPBGPneighborIPv4(BGP_conf["AS"],
+                                          BGP_conf["my_networks"],
+                                          BGP_conf["neighbor"])
 
     # MPLS
     if arguments.mpls or confugure_all:
@@ -53,18 +52,30 @@ def pushOne(configurator, config, arguments, confugure_all):
             if "MPLS" in interface:
                 configurator.activeMPLSonInterface(interface["interfaceName"])
 
-    # Interface
-    if arguments.interface:
+    # VRF
+    if "VRF" in config:
+        for vrf in config["VFR"]:
+            configurator.setVRF(vrf["name"],
+                                vrf["rd"],
+                                vrf["rt_import"],
+                                vrf["rt_export"])
         for interface in config["interfaces"]:
+            if "VRF" in interface:
+                configurator.activateVRFonInterface(interface["interfaceName"],
+                                                    interface["VRF"])
+
+    # Interface
+    for interface in config["interfaces"]:
+        if arguments.interface:
             if interface["interfaceName"] != arguments.interface:
                 continue
-            if "IPv4" in interface:
-                configurator.setUpIPv4(interface["interfaceName"],
-                                       interface["IPv4"])
+        if "IPv4" in interface:
+            configurator.setUpIPv4(interface["interfaceName"],
+                                   interface["IPv4"])
 
-            if "IPv6" in interface:
-                configurator.setUpIPv6(interface["interfaceName"],
-                                       interface["IPv6"])
+        if "IPv6" in interface:
+            configurator.setUpIPv6(interface["interfaceName"],
+                                   interface["IPv6"])
 
 
 if __name__ == '__main__':

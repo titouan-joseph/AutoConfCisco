@@ -1,11 +1,11 @@
 {
-  "R1": {
+  "P1": {
     "IPaddr": "127.0.0.1",
-    "port": 5000,
+    "port": 5001,
     "interfaces": [
       {
-        "interfaceName" : "Loopback0",
-        "IPv4" : [
+        "interfaceName": "Loopback0",
+        "IPv4": [
           "127.1.1.1",
           "255.255.255.255"
         ]
@@ -19,7 +19,7 @@
         ],
         "IPv6": "192:168:2::11/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet2/0",
@@ -30,7 +30,7 @@
         ],
         "IPv6": "192:168:5::12/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet3/0",
@@ -41,7 +41,7 @@
         ],
         "IPv6": "192:168:1::13/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet4/0",
@@ -52,7 +52,7 @@
         ],
         "IPv6": "192:168:4::14/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       }
     ],
     "OSPF_id": "1.1.1.1",
@@ -78,15 +78,15 @@
         "0"
       ]
     ],
-    "ipcef" : true
+    "ipcef": true
   },
-  "R2": {
+  "P2": {
     "IPaddr": "127.0.0.1",
-    "port": 5001,
+    "port": 5002,
     "interfaces": [
       {
-        "interfaceName" : "Loopback0",
-        "IPv4" : [
+        "interfaceName": "Loopback0",
+        "IPv4": [
           "127.1.1.1",
           "255.255.255.255"
         ]
@@ -100,7 +100,7 @@
         ],
         "IPv6": "192:168:2::21/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet2/0",
@@ -111,7 +111,7 @@
         ],
         "IPv6": "192:168:7::22/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet3/0",
@@ -122,7 +122,7 @@
         ],
         "IPv6": "192:168:3::23/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet4/0",
@@ -133,7 +133,7 @@
         ],
         "IPv6": "192:168:14::24/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       }
     ],
     "OSPF_id": "2.2.2.2",
@@ -159,15 +159,15 @@
         "0"
       ]
     ],
-    "ipcef" : true
+    "ipcef": true
   },
-  "R3": {
+  "P3": {
     "IPaddr": "127.0.0.1",
-    "port": 5002,
+    "port": 5003,
     "interfaces": [
       {
-        "interfaceName" : "Loopback0",
-        "IPv4" : [
+        "interfaceName": "Loopback0",
+        "IPv4": [
           "127.1.1.1",
           "255.255.255.255"
         ]
@@ -181,7 +181,7 @@
         ],
         "IPv6": "192:168:6::31/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet2/0",
@@ -192,7 +192,7 @@
         ],
         "IPv6": "192:168:5::32/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet3/0",
@@ -203,7 +203,7 @@
         ],
         "IPv6": "192:168:12::33/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet4/0",
@@ -214,7 +214,7 @@
         ],
         "IPv6": "192:168:11::34/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       }
     ],
     "OSPF_id": "3.3.3.3",
@@ -240,15 +240,15 @@
         "0"
       ]
     ],
-    "ipcef" : true
+    "ipcef": true
   },
-  "R4": {
+  "P4": {
     "IPaddr": "127.0.0.1",
-    "port": 5003,
+    "port": 5004,
     "interfaces": [
       {
-        "interfaceName" : "Loopback0",
-        "IPv4" : [
+        "interfaceName": "Loopback0",
+        "IPv4": [
           "127.1.1.1",
           "255.255.255.255"
         ]
@@ -262,7 +262,7 @@
         ],
         "IPv6": "192:168:6::41/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet2/0",
@@ -273,7 +273,7 @@
         ],
         "IPv6": "192:168:7::42/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet3/0",
@@ -284,7 +284,7 @@
         ],
         "IPv6": "192:168:8::43/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet4/0",
@@ -295,7 +295,7 @@
         ],
         "IPv6": "192:168:13::44/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       }
     ],
     "OSPF_id": "4.4.4.4",
@@ -321,15 +321,15 @@
         "0"
       ]
     ],
-    "ipcef" : true
+    "ipcef": true
   },
   "PE1": {
     "IPaddr": "127.0.0.1",
-    "port": 5004,
+    "port": 5005,
     "interfaces": [
       {
-        "interfaceName" : "Loopback0",
-        "IPv4" : [
+        "interfaceName": "Loopback0",
+        "IPv4": [
           "127.1.1.1",
           "255.255.255.255"
         ]
@@ -343,7 +343,7 @@
         ],
         "IPv6": "192:168:1::111/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet2/0",
@@ -354,7 +354,7 @@
         ],
         "IPv6": "192:168:11::112/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet3/0",
@@ -365,7 +365,8 @@
         ],
         "IPv6": "192:168:201::1/64",
         "OSPF_area": 0,
-        "MPLS" : false
+        "MPLS": false,
+        "VRF": "ETS1"
       },
       {
         "interfaceName": "GigabitEthernet4/0",
@@ -376,7 +377,8 @@
         ],
         "IPv6": "192:168:202::1/64",
         "OSPF_area": 0,
-        "MPLS" : false
+        "MPLS": false,
+        "VRF" : "ETS2"
       },
       {
         "interfaceName": "fa0/0",
@@ -387,7 +389,7 @@
         ],
         "IPv6": "192:168:100::1/64",
         "OSPF_area": 0,
-        "MPLS" : false
+        "MPLS": false
       }
     ],
     "OSPF_id": "10.10.10.10",
@@ -408,32 +410,64 @@
         "0"
       ]
     ],
-    "ipcef" : true,
-    "BGP" : {
-      "AS" : 1,
-      "neighbor" : [
+    "ipcef": true,
+    "VFR": [
+              {
+                "name": "ETS1",
+                "rd" : "100:1",
+                "rt_import" : ["100:1"],
+                "rt_export" : ["100:1"]
+              },
+              {
+                "name": "ETS2",
+                "rd" : "100:2",
+                "rt_import" : ["100:2"],
+                "rt_export" : ["100:2"]
+              }
+              ],
+    "BGP": {
+      "AS": 1,
+      "neighbor": [
         {
-          "AS" : 3,
-          "addr" : "192.168.201.2"
+          "AS": 3,
+          "addr": "192.168.201.2"
         },
-         {
-          "AS" : 4,
-          "addr" : "192.168.202.2"
+        {
+          "AS": 4,
+          "addr": "192.168.202.2"
         }
       ],
-      "my_networks" : [
-        ["192.168.1.0", "255.255.255.0"],
-        ["192.168.11.0", "255.255.255.0"]
+      "my_networks": [
+        [
+          "192.168.1.0",
+          "255.255.255.0"
+        ],
+        [
+          "192.168.11.0",
+          "255.255.255.0"
+        ]
+      ],
+      "VRF" :  [
+        {
+          "neighbour" : "172.16.2.1",
+          "as_remote" : 3,
+          "vrf_name" : "ETS1"
+        },
+        {
+          "neighbour" : "172.17.2.1",
+          "as_remote" : 4,
+          "vrf_name": "ETS2"
+        }
       ]
     }
   },
   "PE2": {
     "IPaddr": "127.0.0.1",
-    "port": 5005,
+    "port": 5006,
     "interfaces": [
       {
-        "interfaceName" : "Loopback0",
-        "IPv4" : [
+        "interfaceName": "Loopback0",
+        "IPv4": [
           "127.1.1.1",
           "255.255.255.255"
         ]
@@ -447,7 +481,7 @@
         ],
         "IPv6": "192:168:4::121/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet2/0",
@@ -458,12 +492,12 @@
         ],
         "IPv6": "192:168:12::122/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       }
     ],
     "OSPF_id": "20.20.20.20",
     "OSPF_neighbour": [
-            [
+      [
         "192.168.4.0",
         "0.0.0.255",
         "0"
@@ -474,15 +508,15 @@
         "0"
       ]
     ],
-    "ipcef" : true
+    "ipcef": true
   },
   "PE3": {
     "IPaddr": "127.0.0.1",
-    "port": 5006,
+    "port": 5007,
     "interfaces": [
       {
-        "interfaceName" : "Loopback0",
-        "IPv4" : [
+        "interfaceName": "Loopback0",
+        "IPv4": [
           "127.1.1.1",
           "255.255.255.255"
         ]
@@ -496,7 +530,7 @@
         ],
         "IPv6": "192:168:3::131/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet2/0",
@@ -507,7 +541,7 @@
         ],
         "IPv6": "192:168:13::132/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet3/0",
@@ -518,12 +552,12 @@
         ],
         "IPv6": "192:168:203::1/64",
         "OSPF_area": 0,
-        "MPLS" : false
+        "MPLS": false
       }
     ],
     "OSPF_id": "30.30.30.30",
     "OSPF_neighbour": [
-            [
+      [
         "192.168.3.0",
         "0.0.0.255",
         "0"
@@ -534,28 +568,49 @@
         "0"
       ]
     ],
-    "ipcef" : true,
-    "BGP" : {
-      "AS" : 1,
-      "neighbor" : [
+    "ipcef": true,
+    "VFR": [
+              {
+                "name": "ETS1",
+                "rd" : "100:1",
+                "rt_import" : ["100:1"],
+                "rt_export" : ["100:1"]
+              }
+              ],
+    "BGP": {
+      "AS": 1,
+      "neighbor": [
         {
-          "AS" : 3,
-          "addr" : "192.168.203.2"
+          "AS": 3,
+          "addr": "192.168.203.2"
         }
       ],
-      "my_networks" : [
-        ["192.168.3.0", "255.255.255.0"],
-        ["192.168.13.0", "255.255.255.0"]
-      ]
+      "my_networks": [
+        [
+          "192.168.3.0",
+          "255.255.255.0"
+        ],
+        [
+          "192.168.13.0",
+          "255.255.255.0"
+        ]
+      ],
+      "VRF" :  [
+        {
+          "neighbour" : "172.16.1.1",
+          "as_remote" : 3,
+          "vrf_name" : "ETS1"
+        }
+        ]
     }
   },
   "PE4": {
     "IPaddr": "127.0.0.1",
-    "port": 5007,
+    "port": 5008,
     "interfaces": [
       {
-        "interfaceName" : "Loopback0",
-        "IPv4" : [
+        "interfaceName": "Loopback0",
+        "IPv4": [
           "127.1.1.1",
           "255.255.255.255"
         ]
@@ -569,7 +624,7 @@
         ],
         "IPv6": "192:168:8::141/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet2/0",
@@ -580,7 +635,7 @@
         ],
         "IPv6": "192:168:14::142/64",
         "OSPF_area": 0,
-        "MPLS" : true
+        "MPLS": true
       },
       {
         "interfaceName": "GigabitEthernet3/0",
@@ -591,7 +646,7 @@
         ],
         "IPv6": "192:168:204::1/64",
         "OSPF_area": 0,
-        "MPLS" : false
+        "MPLS": false
       },
       {
         "interfaceName": "fa0/0",
@@ -602,12 +657,12 @@
         ],
         "IPv6": "192:168:100::10/64",
         "OSPF_area": 0,
-        "MPLS" : false
+        "MPLS": false
       }
     ],
     "OSPF_id": "40.40.40.40",
     "OSPF_neighbour": [
-            [
+      [
         "192.168.100.128",
         "0.0.0.127",
         "0"
@@ -623,33 +678,54 @@
         "0"
       ]
     ],
-    "ipcef" : true,
-    "BGP" : {
-      "AS" : 1,
-      "neighbor" : [
+    "ipcef": true,
+    "VFR": [
+              {
+                "name": "ETS2",
+                "rd" : "100:2",
+                "rt_import" : ["100:2"],
+                "rt_export" : ["100:2"]
+              }
+              ],
+    "BGP": {
+      "AS": 1,
+      "neighbor": [
         {
-          "AS" : 4,
-          "addr" : "192.168.204.2"
+          "AS": 4,
+          "addr": "192.168.204.2"
         }
       ],
-      "my_networks" : [
-        ["192.168.8.0", "255.255.255.0"],
-        ["192.168.14.0", "255.255.255.0"]
-      ]
+      "my_networks": [
+        [
+          "192.168.8.0",
+          "255.255.255.0"
+        ],
+        [
+          "192.168.14.0",
+          "255.255.255.0"
+        ]
+      ],
+      "VRF" :  [
+        {
+          "neighbour" : "172.17.1.1",
+          "as_remote" : 4,
+          "vrf_name" : "ETS2"
+        }
+        ]
     }
   },
-    "CE1": {
-      "IPaddr": "127.0.0.1",
-      "port": 5012,
-      "interfaces": [
-        {
-        "interfaceName" : "Loopback0",
-        "IPv4" : [
+  "CE1": {
+    "IPaddr": "127.0.0.1",
+    "port": 5013,
+    "interfaces": [
+      {
+        "interfaceName": "Loopback0",
+        "IPv4": [
           "127.1.1.1",
           "255.255.255.255"
         ]
       },
-        {
+      {
         "interfaceName": "GigabitEthernet1/0",
         "toRouter": "PE1",
         "IPv4": [
@@ -657,10 +733,10 @@
           "255.255.255.0"
         ],
         "IPv6": "192:168:201::2/64",
-        "OSPF_area": false ,
-        "MPLS" : false
+        "OSPF_area": false,
+        "MPLS": false
       },
-        {
+      {
         "interfaceName": "fa0/0",
         "toRouter": "LAN1",
         "IPv4": [
@@ -668,31 +744,51 @@
           "255.255.255.0"
         ],
         "IPv6": "172:16:1::1/64",
-        "OSPF_area": 20 ,
-        "MPLS" : false
+        "OSPF_area": 20,
+        "MPLS": false
       }
-      ],"OSPF_id": "10.1.1.1",
+    ],
+    "OSPF_id": "10.1.1.1",
     "OSPF_neighbour": [
-        ["192.168.201.0",
+      [
+        "192.168.201.0",
         "0.0.0.255",
-        "0"],
-      ["172.16.1.0",
+        "0"
+      ],
+      [
+        "172.16.1.0",
         "0.0.0.255",
-        "0"]
+        "0"
       ]
-    },
-    "CE2": {
-      "IPaddr": "127.0.0.1",
-      "port": 5013,
-      "interfaces": [
+    ],
+    "BGP": {
+      "AS": 3,
+      "neighbor": [
         {
-        "interfaceName" : "Loopback0",
-        "IPv4" : [
+          "AS": 1,
+          "addr": "192.168.201.1"
+        }
+      ],
+      "my_networks": [
+        [
+          "172.16.1.0",
+          "255.255.255.0"
+        ]
+      ]
+    }
+  },
+  "CE2": {
+    "IPaddr": "127.0.0.1",
+    "port": 5014,
+    "interfaces": [
+      {
+        "interfaceName": "Loopback0",
+        "IPv4": [
           "127.1.1.1",
           "255.255.255.255"
         ]
       },
-        {
+      {
         "interfaceName": "GigabitEthernet1/0",
         "toRouter": "PE1",
         "IPv4": [
@@ -700,10 +796,10 @@
           "255.255.255.0"
         ],
         "IPv6": "192:168:202::2/64",
-        "OSPF_area": false ,
-        "MPLS" : false
+        "OSPF_area": false,
+        "MPLS": false
       },
-        {
+      {
         "interfaceName": "fa0/0",
         "toRouter": "LAN1",
         "IPv4": [
@@ -711,31 +807,51 @@
           "255.255.255.0"
         ],
         "IPv6": "172:17:1::1/64",
-        "OSPF_area": 21 ,
-        "MPLS" : false
+        "OSPF_area": 21,
+        "MPLS": false
       }
-      ],"OSPF_id": "20.1.1.1",
+    ],
+    "OSPF_id": "20.1.1.1",
     "OSPF_neighbour": [
-        ["192.168.202.0",
+      [
+        "192.168.202.0",
         "0.0.0.255",
-        "0"],
-      ["172.17.1.0",
+        "0"
+      ],
+      [
+        "172.17.1.0",
         "0.0.0.255",
-        "0"]
+        "0"
       ]
-    },
-    "CE3": {
-      "IPaddr": "127.0.0.1",
-      "port": 5014,
-      "interfaces": [
+    ],
+    "BGP": {
+      "AS": 4,
+      "neighbor": [
         {
-        "interfaceName" : "Loopback0",
-        "IPv4" : [
+          "AS": 1,
+          "addr": "192.168.202.1"
+        }
+      ],
+      "my_networks": [
+        [
+          "172.17.1.0",
+          "255.255.255.0"
+        ]
+      ]
+    }
+  },
+  "CE3": {
+    "IPaddr": "127.0.0.1",
+    "port": 5015,
+    "interfaces": [
+      {
+        "interfaceName": "Loopback0",
+        "IPv4": [
           "127.1.1.1",
           "255.255.255.255"
         ]
       },
-        {
+      {
         "interfaceName": "GigabitEthernet1/0",
         "toRouter": "PE3",
         "IPv4": [
@@ -743,10 +859,10 @@
           "255.255.255.0"
         ],
         "IPv6": "192:168:203::2/64",
-        "OSPF_area": false ,
-        "MPLS" : false
+        "OSPF_area": false,
+        "MPLS": false
       },
-        {
+      {
         "interfaceName": "fa0/0",
         "toRouter": "LAN1",
         "IPv4": [
@@ -754,31 +870,51 @@
           "255.255.255.0"
         ],
         "IPv6": "172:16:2::1/64",
-        "OSPF_area": 20 ,
-        "MPLS" : false
+        "OSPF_area": 20,
+        "MPLS": false
       }
-      ],"OSPF_id": "30.1.1.1",
+    ],
+    "OSPF_id": "30.1.1.1",
     "OSPF_neighbour": [
-        ["192.168.203.0",
+      [
+        "192.168.203.0",
         "0.0.0.255",
-        "0"],
-      ["172.16.2.0",
+        "0"
+      ],
+      [
+        "172.16.2.0",
         "0.0.0.255",
-        "0"]
+        "0"
       ]
-    },
-    "CE4": {
-      "IPaddr": "127.0.0.1",
-      "port": 5015,
-      "interfaces": [
+    ],
+    "BGP": {
+      "AS": 3,
+      "neighbor": [
         {
-        "interfaceName" : "Loopback0",
-        "IPv4" : [
+          "AS": 1,
+          "addr": "192.168.203.1"
+        }
+      ],
+      "my_networks": [
+        [
+          "172.16.2.0",
+          "255.255.255.0"
+        ]
+      ]
+    }
+  },
+  "CE4": {
+    "IPaddr": "127.0.0.1",
+    "port": 5016,
+    "interfaces": [
+      {
+        "interfaceName": "Loopback0",
+        "IPv4": [
           "127.1.1.1",
           "255.255.255.255"
         ]
       },
-        {
+      {
         "interfaceName": "fa0/0",
         "toRouter": "LAN1",
         "IPv4": [
@@ -786,10 +922,10 @@
           "255.255.255.0"
         ],
         "IPv6": "172:17:2::1/64",
-        "OSPF_area": false ,
-        "MPLS" : false
+        "OSPF_area": false,
+        "MPLS": false
       },
-        {
+      {
         "interfaceName": "GigabitEthernet1/0",
         "toRouter": "PE4",
         "IPv4": [
@@ -797,17 +933,37 @@
           "255.255.255.0"
         ],
         "IPv6": "192:168:204::2/64",
-        "OSPF_area": 21 ,
-        "MPLS" : false
+        "OSPF_area": 21,
+        "MPLS": false
       }
-      ],"OSPF_id": "40.1.1.1",
+    ],
+    "OSPF_id": "40.1.1.1",
     "OSPF_neighbour": [
-        ["192.168.204.0",
+      [
+        "192.168.204.0",
         "0.0.0.255",
-        "0"],
-      ["172.17.2.0",
+        "0"
+      ],
+      [
+        "172.17.2.0",
         "0.0.0.255",
-        "0"]
+        "0"
+      ]
+    ],
+    "BGP": {
+      "AS": 4,
+      "neighbor": [
+        {
+          "AS": 1,
+          "addr": "192.168.204.1"
+        }
+      ],
+      "my_networks": [
+        [
+          "172.17.2.0",
+          "255.255.255.0"
+        ]
       ]
     }
+  }
 }

@@ -122,3 +122,40 @@ class Configuration:
         for net in my_networks:
             self.sendCommand(f"network {net[0]} mask {net[1]}")
         self.sendCommand("end")
+
+    def setVRF(self, vrf_name, rd, rt_import: list, rt_export: list):
+        print(f"{self.name} : adding VRF {vrf_name}")
+        self.configureTerminal()
+        self.sendCommand(f"ip vrf {vrf_name}")
+        self.sendCommand(f"rd {rd}")
+        for rt_in in rt_import:
+            self.sendCommand(f"route-target import {rt_in}")
+        for rt_out in rt_export:
+            self.sendCommand(f"route-target export {rt_out}")
+        self.sendCommand("end")
+
+    def activateVRFonInterface(self, interface, vrf_name):
+        print(f"{self.name} : adding VRF {vrf_name} on {interface}")
+        self.interInInterfaceMode(interface)
+        self.sendCommand(f"ip vrf forwarding {vrf_name}")
+        self.sendCommand("end")
+
+    def activateVPNonBGP(self, as_number, neighbour):
+        print(f"{self.name} : activate VPN on BGP as {as_number}")
+        self.sendCommand(f"router bgp {as_number}")
+        self.sendCommand("address-family vpnv4")
+        self.sendCommand(f"neighbor {neighbour} activate")
+        self.sendCommand(f"neighbor {neighbour} send-community extended")
+        self.sendCommand("no auto-summary")
+        self.sendCommand("exit-address-family")
+
+    def activateVRFonBGP(self, as_number, neighbour, as_remote, vrf_name):
+        print(f"{self.name} : activate VRF {vrf_name} on BGP {as_number}")
+        self.sendCommand(f"router bgp {as_number}")
+        self.sendCommand(f"address-family ipv4 vrf {vrf_name}")
+        self.sendCommand("redistribute connected")
+        self.sendCommand(f"neighbor {neighbour} remote-as {as_remote}")
+        self.sendCommand(f"neighbor {neighbour} activate")
+        self.sendCommand("no auto-summary")
+        self.sendCommand("no synchronization")
+        self.sendCommand("exit-address-family")
