@@ -3,11 +3,25 @@ Auto configuration de routeur en poussant la configuration avec telnet
 
 ## Features 
  - [X] OSPF
- - [ ] BGP
+ - [X] BGP
  - [X] MPLS - LDP
  - [ ] VRF
  - [X] Multithread
  - [X] Configuration de router / protocol en particulier
+
+## Architecture
+ 
+
+
+- OSPF(1) pour le papillon et labelisation des paquets
+
+- OSPF(2) pour l'entreprise, pour parler dans son réseau
+
+- VPN pour parler sur 2 sites distincts sur le réseau, pour les PE
+
+- BGP sert à faire translation de l'OSPF(2) client (activation des routes entre CE) vers l'OSPF(1) du backbone
+ 
+
 
 
 ## Usage

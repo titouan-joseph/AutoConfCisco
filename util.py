@@ -95,6 +95,13 @@ class Configuration:
         self.sendCommand(f"ipv6 ospf 2 area {OSPF_area}")
         self.sendCommand("end")
 
+    def setVRFonOSPF(self, vrf_name, ospf_id, network, ospf_area, as_number):
+        print(f"{self.name} : Set VRF {vrf_name} on OSPF {ospf_area}")
+        self.configureTerminal()
+        self.sendCommand(f"router ospf {ospf_id} vrf {vrf_name}")
+        self.sendCommand(f"redistribute bgp {as_number} subnets")
+        self.sendCommand(f"network {network} area {ospf_area}")
+
     def activeIPcef(self):
         print(f"{self.name} : Active MPLS (ip cef) \n")
         self.configureTerminal()
@@ -108,19 +115,16 @@ class Configuration:
 
     def activeMPBGP(self, as_number):
         print(f"{self.name} : active MPBGP \n")
+        self.configureTerminal()
         self.sendCommand(f"router bgp {as_number}")
 
-    def setMPBGPneighborIPv4(self, as_number, my_networks, neighbor):
+    def setMPBGPneighborIPv4(self, as_number, neighbor):
         print(f"{self.name} : adding neighbor {neighbor} at AS : {as_number} \n")
         self.activeMPBGP(as_number)
+        self.sendCommand("no bgp default ipv4-unicast")
         for n in neighbor:
             self.sendCommand(f"neighbor {n['addr']} remote-as {n['AS']}")
-            self.sendCommand(f"address-family ipv4")
-            self.sendCommand(f"neighbor {n['addr']} activate")
-            self.sendCommand(f"exit")
-        self.sendCommand(f"address-family ipv4")
-        for net in my_networks:
-            self.sendCommand(f"network {net[0]} mask {net[1]}")
+            self.sendCommand("neighbor update-source Loopback0")
         self.sendCommand("end")
 
     def setVRF(self, vrf_name, rd, rt_import: list, rt_export: list):
@@ -140,22 +144,23 @@ class Configuration:
         self.sendCommand(f"ip vrf forwarding {vrf_name}")
         self.sendCommand("end")
 
-    def activateVPNonBGP(self, as_number, neighbour):
+    def activateVPNonBGP(self, as_number, neighbor):
         print(f"{self.name} : activate VPN on BGP as {as_number}")
+        self.configureTerminal()
         self.sendCommand(f"router bgp {as_number}")
         self.sendCommand("address-family vpnv4")
-        self.sendCommand(f"neighbor {neighbour} activate")
-        self.sendCommand(f"neighbor {neighbour} send-community extended")
+        for n in neighbor:
+            self.sendCommand(f"neighbor {n['addr']} activate")
+            self.sendCommand(f"neighbor {n['addr']} send-community extended")
         self.sendCommand("no auto-summary")
         self.sendCommand("exit-address-family")
 
-    def activateVRFonBGP(self, as_number, neighbour, as_remote, vrf_name):
+    def activateVRFonBGP(self, as_number, vrf_name, ospf_id):
         print(f"{self.name} : activate VRF {vrf_name} on BGP {as_number}")
         self.sendCommand(f"router bgp {as_number}")
         self.sendCommand(f"address-family ipv4 vrf {vrf_name}")
-        self.sendCommand("redistribute connected")
-        self.sendCommand(f"neighbor {neighbour} remote-as {as_remote}")
-        self.sendCommand(f"neighbor {neighbour} activate")
+        # self.sendCommand("redistribute connected")
+        self.sendCommand(f"redistribute ospf {ospf_id} match internal external 1 external 2")
         self.sendCommand("no auto-summary")
         self.sendCommand("no synchronization")
         self.sendCommand("exit-address-family")

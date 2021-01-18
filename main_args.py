@@ -5,7 +5,7 @@ import json
 import socket
 
 
-def pushOne(configurator, config, arguments, confugure_all):
+def pushOne(configurator, config, arguments, configure_all):
     # Erase running configuration
     if arguments.erase:
         configurator.eraseRunningConfiguration()
@@ -21,7 +21,7 @@ def pushOne(configurator, config, arguments, confugure_all):
     configurator.activeIPv6()
 
     # OSPF
-    if arguments.ospf or confugure_all:
+    if arguments.ospf or configure_all:
         # Set OSPF
         if "OSPF_id" in config:
             configurator.setOSPFv2(config["OSPF_id"])
@@ -32,7 +32,7 @@ def pushOne(configurator, config, arguments, confugure_all):
             configurator.setNeighbourOSPFv2(config["OSPF_neighbour"])
 
         for interface in config["interfaces"]:
-            if "OSPF_area" in interface:
+            if "OSPF_area" in interface and interface["OSPF_area"]:
                 configurator.activeOSPFv3Interface(interface["interfaceName"],
                                                    interface["OSPF_area"])
 
@@ -40,25 +40,37 @@ def pushOne(configurator, config, arguments, confugure_all):
     if "BGP" in config:
         BGP_conf = config["BGP"]
         configurator.setMPBGPneighborIPv4(BGP_conf["AS"],
-                                          BGP_conf["my_networks"],
                                           BGP_conf["neighbor"])
+        configurator.activateVPNonBGP(BGP_conf["AS"],
+                                      BGP_conf["neighbor"])
 
     # MPLS
-    if arguments.mpls or confugure_all:
+    if arguments.mpls or configure_all:
         # Activated MPLS
         if "ipcef" in config:
             configurator.activeIPcef()
         for interface in config["interfaces"]:
             if "MPLS" in interface:
-                configurator.activeMPLSonInterface(interface["interfaceName"])
+                if interface["MPLS"]:
+                    configurator.activeMPLSonInterface(interface["interfaceName"])
 
     # VRF
     if "VRF" in config:
-        for vrf in config["VFR"]:
+        for vrf in config["VRF"]:
             configurator.setVRF(vrf["name"],
                                 vrf["rd"],
                                 vrf["rt_import"],
                                 vrf["rt_export"])
+
+            configurator.setVRFonOSPF(vrf["name"],
+                                      vrf["ospf_prosses"],
+                                      vrf["network"],
+                                      vrf["ospf_area"],
+                                      config["BGP"]["AS"])
+
+            configurator.activateVRFonBGP(config["BGP"]["AS"],
+                                          vrf["name"],
+                                          vrf["ospf_prosses"])
         for interface in config["interfaces"]:
             if "VRF" in interface:
                 configurator.activateVRFonInterface(interface["interfaceName"],
