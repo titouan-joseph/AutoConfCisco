@@ -129,7 +129,7 @@ class Configuration:
         self.sendCommand("no bgp default ipv4-unicast")
         for n in neighbor:
             self.sendCommand(f"neighbor {n['addr']} remote-as {n['AS']}")
-            self.sendCommand("neighbor update-source Loopback0")
+            self.sendCommand(f"neighbor {n['addr']} update-source Loopback 0")
         self.sendCommand("end")
 
     def setVRF(self, vrf_name, rd, rt_import: list, rt_export: list):

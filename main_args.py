@@ -20,40 +20,6 @@ def pushOne(configurator, config, arguments, configure_all):
     # Activated IPv6
     configurator.activeIPv6()
 
-    # OSPF
-    if arguments.ospf or configure_all:
-        # Set OSPF
-        if "OSPF_id" in config:
-            configurator.setOSPFv2(config["OSPF_id"])
-            configurator.setOSPFv3(config["OSPF_id"])
-
-        # Set OSPF neighbour
-        if "OSPF_neighbour" in config:
-            configurator.setNeighbourOSPFv2(config["OSPF_neighbour"])
-
-        for interface in config["interfaces"]:
-            if "OSPF_area" in interface and interface["OSPF_area"]:
-                configurator.activeOSPFv3Interface(interface["interfaceName"],
-                                                   interface["OSPF_area"])
-
-    # BGP
-    if "BGP" in config:
-        BGP_conf = config["BGP"]
-        configurator.setMPBGPneighborIPv4(BGP_conf["AS"],
-                                          BGP_conf["neighbor"])
-        configurator.activateVPNonBGP(BGP_conf["AS"],
-                                      BGP_conf["neighbor"])
-
-    # MPLS
-    if arguments.mpls or configure_all:
-        # Activated MPLS
-        if "ipcef" in config:
-            configurator.activeIPcef()
-        for interface in config["interfaces"]:
-            if "MPLS" in interface:
-                if interface["MPLS"]:
-                    configurator.activeMPLSonInterface(interface["interfaceName"])
-
     # VRF
     if "VRF" in config:
         for vrf in config["VRF"]:
@@ -91,6 +57,40 @@ def pushOne(configurator, config, arguments, configure_all):
         if "description" in interface:
             configurator.setIntDescription(interface["interfaceName"],
                                            interface["description"])
+
+    # OSPF
+    if arguments.ospf or configure_all:
+        # Set OSPF
+        if "OSPF_id" in config:
+            configurator.setOSPFv2(config["OSPF_id"])
+            configurator.setOSPFv3(config["OSPF_id"])
+
+        # Set OSPF neighbour
+        if "OSPF_neighbour" in config:
+            configurator.setNeighbourOSPFv2(config["OSPF_neighbour"])
+
+        for interface in config["interfaces"]:
+            if "OSPF_area" in interface and interface["OSPF_area"]:
+                configurator.activeOSPFv3Interface(interface["interfaceName"],
+                                                   interface["OSPF_area"])
+
+    # BGP
+    if "BGP" in config:
+        BGP_conf = config["BGP"]
+        configurator.setMPBGPneighborIPv4(BGP_conf["AS"],
+                                          BGP_conf["neighbor"])
+        configurator.activateVPNonBGP(BGP_conf["AS"],
+                                      BGP_conf["neighbor"])
+
+    # MPLS
+    if arguments.mpls or configure_all:
+        # Activated MPLS
+        if "ipcef" in config:
+            configurator.activeIPcef()
+        for interface in config["interfaces"]:
+            if "MPLS" in interface:
+                if interface["MPLS"]:
+                    configurator.activeMPLSonInterface(interface["interfaceName"])
 
 
 if __name__ == '__main__':
