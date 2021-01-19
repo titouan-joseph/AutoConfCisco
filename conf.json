@@ -6,13 +6,13 @@
       {
         "interfaceName": "Loopback0",
         "IPv4": [
-          "127.1.1.1",
+          "1.1.1.1",
           "255.255.255.255"
         ]
       },
       {
         "interfaceName": "GigabitEthernet1/0",
-        "toRouter": "R2",
+        "description": "To P2",
         "IPv4": [
           "192.168.2.11",
           "255.255.255.0"
@@ -23,7 +23,7 @@
       },
       {
         "interfaceName": "GigabitEthernet2/0",
-        "toRouter": "R3",
+        "description": "To P3",
         "IPv4": [
           "192.168.5.12",
           "255.255.255.0"
@@ -34,7 +34,7 @@
       },
       {
         "interfaceName": "GigabitEthernet3/0",
-        "toRouter": "PE1",
+        "description": "To PE1",
         "IPv4": [
           "192.168.1.13",
           "255.255.255.0"
@@ -45,7 +45,7 @@
       },
       {
         "interfaceName": "GigabitEthernet4/0",
-        "toRouter": "PE2",
+        "description": "To PE2",
         "IPv4": [
           "192.168.4.14",
           "255.255.255.0"
@@ -76,6 +76,11 @@
         "192.168.5.0",
         "0.0.0.255",
         "0"
+      ],
+      [
+        "1.1.1.1",
+        "0.0.0.0",
+        "0"
       ]
     ],
     "ipcef": true
@@ -87,13 +92,13 @@
       {
         "interfaceName": "Loopback0",
         "IPv4": [
-          "127.1.1.1",
+          "2.2.2.2",
           "255.255.255.255"
         ]
       },
       {
         "interfaceName": "GigabitEthernet1/0",
-        "toRouter": "R1",
+        "description": "To P1",
         "IPv4": [
           "192.168.2.21",
           "255.255.255.0"
@@ -104,7 +109,7 @@
       },
       {
         "interfaceName": "GigabitEthernet2/0",
-        "toRouter": "R4",
+        "description": "To P4",
         "IPv4": [
           "192.168.7.22",
           "255.255.255.0"
@@ -115,7 +120,7 @@
       },
       {
         "interfaceName": "GigabitEthernet3/0",
-        "toRouter": "PE3",
+        "description": "To PE3",
         "IPv4": [
           "192.168.3.23",
           "255.255.255.0"
@@ -126,7 +131,7 @@
       },
       {
         "interfaceName": "GigabitEthernet4/0",
-        "toRouter": "PE4",
+        "description": "To PE4",
         "IPv4": [
           "192.168.14.24",
           "255.255.255.0"
@@ -157,6 +162,11 @@
         "192.168.14.0",
         "0.0.0.255",
         "0"
+      ],
+      [
+        "2.2.2.2",
+        "0.0.0.0",
+        "0"
       ]
     ],
     "ipcef": true
@@ -168,13 +178,13 @@
       {
         "interfaceName": "Loopback0",
         "IPv4": [
-          "127.1.1.1",
+          "3.3.3.3",
           "255.255.255.255"
         ]
       },
       {
         "interfaceName": "GigabitEthernet1/0",
-        "toRouter": "R4",
+        "description": "To P4",
         "IPv4": [
           "192.168.6.31",
           "255.255.255.0"
@@ -185,7 +195,7 @@
       },
       {
         "interfaceName": "GigabitEthernet2/0",
-        "toRouter": "R1",
+        "description": "To P1",
         "IPv4": [
           "192.168.5.32",
           "255.255.255.0"
@@ -196,7 +206,7 @@
       },
       {
         "interfaceName": "GigabitEthernet3/0",
-        "toRouter": "PE2",
+        "description": "To PE2",
         "IPv4": [
           "192.168.12.33",
           "255.255.255.0"
@@ -207,7 +217,7 @@
       },
       {
         "interfaceName": "GigabitEthernet4/0",
-        "toRouter": "PE1",
+        "description": "To PE1",
         "IPv4": [
           "192.168.11.34",
           "255.255.255.0"
@@ -238,6 +248,11 @@
         "192.168.13.0",
         "0.0.0.255",
         "0"
+      ],
+      [
+        "3.3.3.3",
+        "0.0.0.0",
+        "0"
       ]
     ],
     "ipcef": true
@@ -249,13 +264,13 @@
       {
         "interfaceName": "Loopback0",
         "IPv4": [
-          "127.1.1.1",
+          "4.4.4.4",
           "255.255.255.255"
         ]
       },
       {
         "interfaceName": "GigabitEthernet1/0",
-        "toRouter": "R3",
+        "description": "To P3",
         "IPv4": [
           "192.168.6.41",
           "255.255.255.0"
@@ -266,7 +281,7 @@
       },
       {
         "interfaceName": "GigabitEthernet2/0",
-        "toRouter": "R2",
+        "description": "To P2",
         "IPv4": [
           "192.168.7.42",
           "255.255.255.0"
@@ -277,7 +292,7 @@
       },
       {
         "interfaceName": "GigabitEthernet3/0",
-        "toRouter": "PE4",
+        "description": "To PE4",
         "IPv4": [
           "192.168.8.43",
           "255.255.255.0"
@@ -288,7 +303,7 @@
       },
       {
         "interfaceName": "GigabitEthernet4/0",
-        "toRouter": "PE3",
+        "description": "To PE3",
         "IPv4": [
           "192.168.13.44",
           "255.255.255.0"
@@ -319,6 +334,11 @@
         "192.168.13.0",
         "0.0.0.255",
         "0"
+      ],
+      [
+        "4.4.4.4",
+        "0.0.0.0",
+        "0"
       ]
     ],
     "ipcef": true
@@ -330,13 +350,13 @@
       {
         "interfaceName": "Loopback0",
         "IPv4": [
-          "10.1.1.1",
+          "11.11.11.11",
           "255.255.255.255"
         ]
       },
       {
         "interfaceName": "GigabitEthernet1/0",
-        "toRouter": "R1",
+        "description": "To P1",
         "IPv4": [
           "192.168.1.111",
           "255.255.255.0"
@@ -347,7 +367,7 @@
       },
       {
         "interfaceName": "GigabitEthernet2/0",
-        "toRouter": "R3",
+        "description": "To P3",
         "IPv4": [
           "192.168.11.112",
           "255.255.255.0"
@@ -358,7 +378,7 @@
       },
       {
         "interfaceName": "GigabitEthernet3/0",
-        "toRouter": "CE1",
+        "description": "To CE1",
         "IPv4": [
           "192.168.201.1",
           "255.255.255.0"
@@ -370,19 +390,19 @@
       },
       {
         "interfaceName": "GigabitEthernet4/0",
-        "toRouter": "CE2",
+        "description": "To CE2",
         "IPv4": [
           "192.168.202.1",
           "255.255.255.0"
         ],
         "IPv6": "192:168:202::1/64",
-        "OSPF_area": 11,
+        "OSPF_area": 20,
         "MPLS": false,
-        "VRF" : "ETS2"
+        "VRF": "ETS2"
       },
       {
         "interfaceName": "fa0/0",
-        "toRouter": "PC1",
+        "description": "To PC1",
         "IPv4": [
           "192.168.100.1",
           "255.255.255.128"
@@ -408,53 +428,56 @@
         "192.168.11.0",
         "0.0.0.255",
         "0"
+      ],
+      [
+        "11.11.11.11",
+        "0.0.0.0",
+        "0"
       ]
     ],
     "ipcef": true,
     "VRF": [
-              {
-                "name": "ETS1",
-                "rd" : "100:1",
-                "rt_import" : ["100:1"],
-                "rt_export" : ["100:1"],
-                "ospf_prosses" : 2,
-                "ospf_area" : 10,
-                "network" : "172.16.0.0 0.0.255.255"
-              },
-              {
-                "name": "ETS2",
-                "rd" : "100:2",
-                "rt_import" : ["100:2"],
-                "rt_export" : ["100:2"],
-                "ospf_prosses" : 3,
-                "ospf_area" : 11,
-                "network" : "172.17.0.0 0.0.255.255"
-              }
-              ],
+      {
+        "name": "ETS1",
+        "rd": "100:1",
+        "rt_import": [
+          "100:1"
+        ],
+        "rt_export": [
+          "100:1"
+        ],
+        "ospf_prosses": 2,
+        "ospf_area": 10,
+        "network": "192.168.201.0 0.0.0.255"
+      },
+      {
+        "name": "ETS2",
+        "rd": "100:2",
+        "rt_import": [
+          "100:2"
+        ],
+        "rt_export": [
+          "100:2"
+        ],
+        "ospf_prosses": 3,
+        "ospf_area": 20,
+        "network": "192.168.202.0 0.0.0.255"
+      }
+    ],
     "BGP": {
       "AS": 1,
       "neighbor": [
         {
-          "AS" : 1,
-          "addr": "10.3.3.3"
+          "AS": 1,
+          "addr": "12.12.12.12"
         },
         {
-          "AS" : 1,
-          "addr": "10.4.4.4"
+          "AS": 1,
+          "addr": "13.13.13.13"
         },
         {
-          "AS" : 1,
-          "addr": "10.2.2.2"
-        }
-      ],
-      "VRF" :  [
-        {
-          "neighbour" : "172.16.2.1",
-          "vrf_name" : "ETS1"
-        },
-        {
-          "neighbour" : "172.17.2.1",
-          "vrf_name": "ETS2"
+          "AS": 1,
+          "addr": "14.14.14.14"
         }
       ]
     }
@@ -466,13 +489,13 @@
       {
         "interfaceName": "Loopback0",
         "IPv4": [
-          "10.2.2.2",
+          "12.12.12.12",
           "255.255.255.255"
         ]
       },
       {
         "interfaceName": "GigabitEthernet1/0",
-        "toRouter": "R1",
+        "description": "To P1",
         "IPv4": [
           "192.168.4.121",
           "255.255.255.0"
@@ -483,7 +506,7 @@
       },
       {
         "interfaceName": "GigabitEthernet2/0",
-        "toRouter": "R3",
+        "description": "To P3",
         "IPv4": [
           "192.168.12.122",
           "255.255.255.0"
@@ -504,9 +527,31 @@
         "192.168.12.0",
         "0.0.0.255",
         "0"
+      ],
+      [
+        "12.12.12.12",
+        "0.0.0.0",
+        "0"
       ]
     ],
-    "ipcef": true
+    "ipcef": true,
+        "BGP": {
+      "AS": 1,
+      "neighbor": [
+        {
+          "AS": 1,
+          "addr": "11.11.11.11"
+        },
+        {
+          "AS": 1,
+          "addr": "13.13.13.13"
+        },
+        {
+          "AS": 1,
+          "addr": "14.14.14.14"
+        }
+      ]
+    }
   },
   "PE3": {
     "IPaddr": "127.0.0.1",
@@ -515,13 +560,13 @@
       {
         "interfaceName": "Loopback0",
         "IPv4": [
-          "10.3.3.3",
+          "13.13.13.13",
           "255.255.255.255"
         ]
       },
       {
         "interfaceName": "GigabitEthernet1/0",
-        "toRouter": "R2",
+        "description": "To P2",
         "IPv4": [
           "192.168.3.131",
           "255.255.255.0"
@@ -532,7 +577,7 @@
       },
       {
         "interfaceName": "GigabitEthernet2/0",
-        "toRouter": "R4",
+        "description": "To P4",
         "IPv4": [
           "192.168.13.132",
           "255.255.255.0"
@@ -543,14 +588,15 @@
       },
       {
         "interfaceName": "GigabitEthernet3/0",
-        "toRouter": "CE3",
+        "description": "To CE3",
         "IPv4": [
           "192.168.203.1",
           "255.255.255.0"
         ],
         "IPv6": "192:168:203::1/64",
-        "OSPF_area": 0,
-        "MPLS": false
+        "OSPF_area": 10,
+        "MPLS": false,
+        "VRF": "ETS1"
       }
     ],
     "OSPF_id": "30.30.30.30",
@@ -563,6 +609,11 @@
       [
         "192.168.13.0",
         "0.0.0.255",
+        "0"
+      ],
+      [
+        "13.13.13.13",
+        "0.0.0.0",
         "0"
       ]
     ],
@@ -579,7 +630,7 @@
         ],
         "ospf_prosses": 2,
         "ospf_area": 10,
-        "network": "172.16.0.0 0.0.255.255"
+        "network": "192.168.203.0 0.0.0.255"
       }
               ],
     "BGP": {
@@ -587,23 +638,17 @@
       "neighbor": [
         {
           "AS": 1,
-          "addr": "10.1.1.1"
+          "addr": "11.11.11.11"
         },
         {
           "AS": 1,
-          "addr": "10.4.4.4"
+          "addr": "12.12.12.12"
         },
         {
           "AS": 1,
-          "addr": "10.2.2.2"
+          "addr": "14.14.14.14"
         }
-      ],
-      "VRF" :  [
-        {
-          "neighbour" : "172.16.1.1",
-          "vrf_name" : "ETS1"
-        }
-        ]
+      ]
     }
   },
   "PE4": {
@@ -613,13 +658,13 @@
       {
         "interfaceName": "Loopback0",
         "IPv4": [
-          "10.4.4.4",
+          "14.14.14.14",
           "255.255.255.255"
         ]
       },
       {
         "interfaceName": "GigabitEthernet1/0",
-        "toRouter": "R4",
+        "description": "To P4",
         "IPv4": [
           "192.168.8.141",
           "255.255.255.0"
@@ -630,7 +675,7 @@
       },
       {
         "interfaceName": "GigabitEthernet2/0",
-        "toRouter": "R2",
+        "description": "To P2",
         "IPv4": [
           "192.168.14.142",
           "255.255.255.0"
@@ -641,18 +686,19 @@
       },
       {
         "interfaceName": "GigabitEthernet3/0",
-        "toRouter": "CE4",
+        "description": "To CE4",
         "IPv4": [
           "192.168.204.1",
           "255.255.255.0"
         ],
         "IPv6": "192:168:204::1/64",
-        "OSPF_area": 0,
-        "MPLS": false
+        "OSPF_area": 20,
+        "MPLS": false,
+        "VRF": "ETS2"
       },
       {
         "interfaceName": "fa0/0",
-        "toRouter": "PC2",
+        "description": "To PC2",
         "IPv4": [
           "192.168.100.129",
           "255.255.255.128"
@@ -678,6 +724,11 @@
         "192.168.14.0",
         "0.0.0.255",
         "0"
+      ],
+      [
+        "14.14.14.14",
+        "0.0.0.0",
+        "0"
       ]
     ],
     "ipcef": true,
@@ -692,8 +743,8 @@
           "100:2"
         ],
         "ospf_prosses": 3,
-        "ospf_area": 11,
-        "network": "172.17.0.0 0.0.255.255"
+        "ospf_area": 20,
+        "network": "192.168.204.0 0.0.0.255"
       }
               ],
     "BGP": {
@@ -701,23 +752,17 @@
       "neighbor": [
         {
           "AS": 1,
-          "addr": "10.1.1.1"
+          "addr": "11.11.11.11"
         },
         {
           "AS": 1,
-          "addr": "10.3.3.3"
+          "addr": "12.12.12.12"
         },
         {
           "AS": 1,
-          "addr": "10.2.2.2"
+          "addr": "13.13.13.13"
         }
-      ],
-      "VRF" :  [
-        {
-          "neighbour" : "172.17.1.1",
-          "vrf_name" : "ETS2"
-        }
-        ]
+      ]
     }
   },
   "CE1": {
@@ -727,13 +772,13 @@
       {
         "interfaceName": "Loopback0",
         "IPv4": [
-          "127.1.1.1",
+          "101.101.101.101",
           "255.255.255.255"
         ]
       },
       {
         "interfaceName": "GigabitEthernet1/0",
-        "toRouter": "PE1",
+        "description": "To PE1",
         "IPv4": [
           "192.168.201.2",
           "255.255.255.0"
@@ -744,7 +789,7 @@
       },
       {
         "interfaceName": "fa0/0",
-        "toRouter": "LAN1",
+        "description": "To LAN1.1",
         "IPv4": [
           "172.16.1.1",
           "255.255.255.0"
@@ -759,7 +804,7 @@
       [
         "192.168.201.0",
         "0.0.0.255",
-        "0"
+        "10"
       ],
       [
         "172.16.1.0",
@@ -767,8 +812,8 @@
         "10"
       ],
       [
-        "172.16.2.0",
-        "0.0.0.255",
+        "101.101.101.101",
+        "0.0.0.0",
         "10"
       ]
     ]
@@ -780,30 +825,30 @@
       {
         "interfaceName": "Loopback0",
         "IPv4": [
-          "127.1.1.1",
+          "102.102.102.102",
           "255.255.255.255"
         ]
       },
       {
         "interfaceName": "GigabitEthernet1/0",
-        "toRouter": "PE1",
+        "description": "To PE1",
         "IPv4": [
           "192.168.202.2",
           "255.255.255.0"
         ],
         "IPv6": "192:168:202::2/64",
-        "OSPF_area": 11,
+        "OSPF_area": 20,
         "MPLS": false
       },
       {
         "interfaceName": "fa0/0",
-        "toRouter": "LAN1",
+        "description": "To LAN2.1",
         "IPv4": [
           "172.17.1.1",
           "255.255.255.0"
         ],
         "IPv6": "172:17:1::1/64",
-        "OSPF_area": 11,
+        "OSPF_area": 20,
         "MPLS": false
       }
     ],
@@ -812,17 +857,17 @@
       [
         "192.168.202.0",
         "0.0.0.255",
-        "0"
+        "20"
       ],
       [
         "172.17.1.0",
         "0.0.0.255",
-        "11"
+        "20"
       ],
       [
-        "172.17.2.0",
-        "0.0.0.255",
-        "11"
+        "102.102.102.102",
+        "0.0.0.0",
+        "20"
       ]
     ]
   },
@@ -833,13 +878,13 @@
       {
         "interfaceName": "Loopback0",
         "IPv4": [
-          "127.1.1.1",
+          "103.103.103.103",
           "255.255.255.255"
         ]
       },
       {
         "interfaceName": "GigabitEthernet1/0",
-        "toRouter": "PE3",
+        "description": "To PE3",
         "IPv4": [
           "192.168.203.2",
           "255.255.255.0"
@@ -850,7 +895,7 @@
       },
       {
         "interfaceName": "fa0/0",
-        "toRouter": "LAN1",
+        "description": "To LAN1.2",
         "IPv4": [
           "172.16.2.1",
           "255.255.255.0"
@@ -865,7 +910,7 @@
       [
         "192.168.203.0",
         "0.0.0.255",
-        "0"
+        "10"
       ],
       [
         "172.16.2.0",
@@ -873,8 +918,8 @@
         "10"
       ],
       [
-        "172.16.1.0",
-        "0.0.0.255",
+        "103.103.103.103",
+        "0.0.0.0",
         "10"
       ]
     ]
@@ -886,30 +931,30 @@
       {
         "interfaceName": "Loopback0",
         "IPv4": [
-          "127.1.1.1",
+          "104.104.104.104",
           "255.255.255.255"
         ]
       },
       {
         "interfaceName": "fa0/0",
-        "toRouter": "LAN1",
+        "description": "To LAN2.2",
         "IPv4": [
           "172.17.2.1",
           "255.255.255.0"
         ],
         "IPv6": "172:17:2::1/64",
-        "OSPF_area": 11,
+        "OSPF_area": 20,
         "MPLS": false
       },
       {
         "interfaceName": "GigabitEthernet1/0",
-        "toRouter": "PE4",
+        "description": "To PE4",
         "IPv4": [
           "192.168.204.2",
           "255.255.255.0"
         ],
         "IPv6": "192:168:204::2/64",
-        "OSPF_area": 11,
+        "OSPF_area": 20,
         "MPLS": false
       }
     ],
@@ -918,17 +963,17 @@
       [
         "192.168.204.0",
         "0.0.0.255",
-        "0"
+        "20"
       ],
       [
         "172.17.2.0",
         "0.0.0.255",
-        "11"
+        "20"
       ],
       [
-        "172.17.1.0",
-        "0.0.0.255",
-        "11"
+        "104.104.104.104",
+        "0.0.0.0",
+        "20"
       ]
     ]
   }

@@ -88,6 +88,9 @@ def pushOne(configurator, config, arguments, configure_all):
         if "IPv6" in interface:
             configurator.setUpIPv6(interface["interfaceName"],
                                    interface["IPv6"])
+        if "description" in interface:
+            configurator.setIntDescription(interface["interfaceName"],
+                                           interface["description"])
 
 
 if __name__ == '__main__':

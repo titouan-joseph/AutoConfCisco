@@ -47,6 +47,11 @@ class Configuration:
         self.sendCommand("no sh")
         self.sendCommand("end")
 
+    def setIntDescription(self, interface, desc):
+        print(f"{self.name} : Set description to {interface} : {desc}")
+        self.interInInterfaceMode(interface)
+        self.sendCommand(f"description \"{desc}\"")
+
     def setUpIPv4(self, interface, IPv4):
         print(f"{self.name} : Configure {interface} with {IPv4} \n")
         self.interInInterfaceMode(interface)
