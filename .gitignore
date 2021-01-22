@@ -7,3 +7,4 @@ __pycache__
 c7200*
 ubridge.log
 ilt*
+*.old

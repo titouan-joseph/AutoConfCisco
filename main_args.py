@@ -5,7 +5,17 @@ import json
 import socket
 
 
-def pushOne(configurator, config, arguments, configure_all):
+def pushOne(configurator: util.Configuration, config: dict, arguments: argparse.Namespace, configure_all: bool):
+    """
+    Fonction pour Thread.
+    Elle permet de pousser via Telnet un configuration sur un routeur cisco.
+    Cette configuration se fait à l'aide d'un fichier json.
+    :param configurator: Objet Configuration du fichier util.py
+    :param config: Dictionnaire du fichier de configuration json
+    :param arguments: Liste d'arguments de argparse
+    :param configure_all: Boolean pour la configuration de multiple protocole ou pour "l'effacement" de la configuration
+    :return: None
+    """
     # Erase running configuration
     if arguments.erase:
         configurator.eraseRunningConfiguration()
@@ -22,29 +32,30 @@ def pushOne(configurator, config, arguments, configure_all):
 
     # VRF
     if "VRF" in config:
-        for vrf in config["VRF"]:
-            configurator.setVRF(vrf["name"],
-                                vrf["rd"],
-                                vrf["rt_import"],
-                                vrf["rt_export"])
+        if arguments.vrf or configure_all:
+            for vrf in config["VRF"]:
+                configurator.setVRF(vrf["name"],
+                                    vrf["rd"],
+                                    vrf["rt_import"],
+                                    vrf["rt_export"])
 
-            configurator.setVRFonOSPF(vrf["name"],
-                                      vrf["ospf_prosses"],
-                                      vrf["network"],
-                                      vrf["ospf_area"],
-                                      config["BGP"]["AS"])
+                configurator.setVRFonOSPF(vrf["name"],
+                                          vrf["ospf_prosses"],
+                                          vrf["network"],
+                                          vrf["ospf_area"],
+                                          config["BGP"]["AS"])
 
-            configurator.activateVRFonBGP(config["BGP"]["AS"],
-                                          vrf["name"],
-                                          vrf["ospf_prosses"])
-        for interface in config["interfaces"]:
-            if "VRF" in interface:
-                configurator.activateVRFonInterface(interface["interfaceName"],
-                                                    interface["VRF"])
+                configurator.activateVRFonBGP(config["BGP"]["AS"],
+                                              vrf["name"],
+                                              vrf["ospf_prosses"])
+            for interface in config["interfaces"]:
+                if "VRF" in interface:
+                    configurator.activateVRFonInterface(interface["interfaceName"],
+                                                        interface["VRF"])
 
     # Interface
     for interface in config["interfaces"]:
-        if arguments.interface:
+        if arguments.interface and arguments.interface != "all":
             if interface["interfaceName"] != arguments.interface:
                 continue
         if "IPv4" in interface:
@@ -105,12 +116,14 @@ if __name__ == '__main__':
     parser.add_argument("--ospf", "-o", help="Configure only OSPF", action='store_true')
     parser.add_argument("--bgp", "-b", help="Configure only BGP", action='store_true')
     parser.add_argument("--mpls", "-m", help="Configure only MPLS", action='store_true')
+    parser.add_argument("--vrf", "-v", help="Configure only VRF", action='store_true')
     parser.add_argument("--write", "-w", help="Write configuration att the end", action='store_true')
     parser.add_argument("--erase", "-e", help="Erase running configuration with default.cfg", action="store_true")
     parser.add_argument("--interface", "--int", "-i", help="Configure only one interface, or all interface with <all>")
     args = parser.parse_args()
+    print(type(args))
 
-    if not args.ospf and not args.bgp and not args.mpls:
+    if not args.ospf and not args.bgp and not args.mpls and not args.vrf:
         all_protocol = True
     if args.erase:
         all_protocol = False
@@ -118,6 +131,7 @@ if __name__ == '__main__':
     with open(args.jsonFile, "r") as file:
         conf = json.load(file)
 
+    # Creation de la socket pour Telnet
     for routerName, routerConf in conf.items():
         if args.router:
             if routerName != args.router:

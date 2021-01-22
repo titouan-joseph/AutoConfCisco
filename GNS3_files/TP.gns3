@@ -22,8 +22,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg height=\"82\" width=\"422\"><rect fill=\"#aa0000\" fill-opacity=\"0.5882352941176471\" height=\"82\" stroke=\"#000000\" stroke-width=\"2\" width=\"422\" /></svg>",
-                "x": -128,
-                "y": -107,
+                "x": -130,
+                "y": -108,
                 "z": 0
             },
             {
@@ -270,15 +270,6 @@
                 "z": 2
             },
             {
-                "drawing_id": "904ba88e-6bdd-4998-b3bb-fbb056df8227",
-                "locked": false,
-                "rotation": 0,
-                "svg": "<svg height=\"196\" width=\"483\"><rect fill=\"#ffaaff\" fill-opacity=\"1.0\" height=\"196\" stroke=\"#000000\" stroke-width=\"2\" width=\"483\" /></svg>",
-                "x": -522,
-                "y": -489,
-                "z": 0
-            },
-            {
                 "drawing_id": "f8424564-d2f6-4292-b335-fbedacd90495",
                 "locked": false,
                 "rotation": 0,
@@ -337,8 +328,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg height=\"24\" width=\"87\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">Entreprise 2</text></svg>",
-                "x": -1052,
-                "y": -45,
+                "x": -1057,
+                "y": -54,
                 "z": 2
             },
             {
@@ -364,8 +355,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg height=\"24\" width=\"87\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">Entreprise 2</text></svg>",
-                "x": 261,
-                "y": 438,
+                "x": 249,
+                "y": 435,
                 "z": 2
             },
             {
@@ -373,62 +364,35 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg height=\"24\" width=\"100\"><text fill=\"#aa0000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">172.17.2.0/24</text></svg>",
-                "x": 611,
-                "y": 436,
+                "x": 465,
+                "y": 430,
                 "z": 2
             },
             {
                 "drawing_id": "6f286adc-cb94-4b2e-bc17-869ec5f3ada2",
                 "locked": false,
                 "rotation": 0,
-                "svg": "<svg height=\"24\" width=\"38\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">AS 4</text></svg>",
+                "svg": "<svg height=\"24\" width=\"64\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">AREA 20</text></svg>",
                 "x": 259,
                 "y": 468,
-                "z": 2
-            },
-            {
-                "drawing_id": "ad3c5df4-0d61-4d6b-a073-9c1da6db780f",
-                "locked": false,
-                "rotation": 0,
-                "svg": "<svg height=\"24\" width=\"38\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">AS 4</text></svg>",
-                "x": -612,
-                "y": 106,
-                "z": 2
-            },
-            {
-                "drawing_id": "a9d4fec8-e45d-495a-babe-ba786b2bec7f",
-                "locked": false,
-                "rotation": 0,
-                "svg": "<svg height=\"24\" width=\"38\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">AS 3</text></svg>",
-                "x": -81,
-                "y": -481,
-                "z": 2
-            },
-            {
-                "drawing_id": "517147c9-db37-43e5-ac27-1d6ef25b1557",
-                "locked": false,
-                "rotation": 0,
-                "svg": "<svg height=\"24\" width=\"38\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">AS 3</text></svg>",
-                "x": 252,
-                "y": -427,
                 "z": 2
             },
             {
                 "drawing_id": "fbdf26fb-38b9-49c0-8984-fd8f49de7f52",
                 "locked": false,
                 "rotation": 0,
-                "svg": "<svg height=\"24\" width=\"64\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">AREA 20</text></svg>",
-                "x": -100,
-                "y": -462,
+                "svg": "<svg height=\"24\" width=\"64\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">AREA 10</text></svg>",
+                "x": -95,
+                "y": -476,
                 "z": 2
             },
             {
                 "drawing_id": "9763c3a3-0e46-4f53-8a02-71016fdeb8a1",
                 "locked": false,
                 "rotation": 0,
-                "svg": "<svg height=\"24\" width=\"64\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">AREA 21</text></svg>",
-                "x": -624,
-                "y": 82,
+                "svg": "<svg height=\"24\" width=\"64\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">AREA 20</text></svg>",
+                "x": -642,
+                "y": 103,
                 "z": 2
             },
             {
@@ -436,8 +400,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg height=\"24\" width=\"104\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">VRF_rd : 100:1</text></svg>",
-                "x": -95,
-                "y": -440,
+                "x": -509,
+                "y": -300,
                 "z": 2
             },
             {
@@ -445,8 +409,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg height=\"24\" width=\"104\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">VRF_rd : 100:1</text></svg>",
-                "x": 224,
-                "y": -403,
+                "x": 614,
+                "y": -269,
                 "z": 2
             },
             {
@@ -454,8 +418,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg height=\"24\" width=\"104\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">VRF_rd : 100:2</text></svg>",
-                "x": -632,
-                "y": 136,
+                "x": -691,
+                "y": -54,
                 "z": 2
             },
             {
@@ -463,8 +427,26 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg height=\"24\" width=\"104\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">VRF_rd : 100:2</text></svg>",
-                "x": 258,
-                "y": 492,
+                "x": 615,
+                "y": 434,
+                "z": 2
+            },
+            {
+                "drawing_id": "3b493298-196b-4aa0-8779-4b592aefebc3",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg height=\"217\" width=\"486\"><rect fill=\"#ffaaff\" fill-opacity=\"1.0\" height=\"217\" stroke=\"#000000\" stroke-width=\"2\" width=\"486\" /></svg>",
+                "x": -510,
+                "y": -488,
+                "z": 0
+            },
+            {
+                "drawing_id": "5fc15f63-df37-4f41-9fda-f0ef5e80d136",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg height=\"24\" width=\"64\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">AREA 10</text></svg>",
+                "x": 654,
+                "y": -448,
                 "z": 2
             }
         ],
@@ -615,8 +597,8 @@
                             "rotation": 10,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "g1/0 192.168.1.111",
-                            "x": 88,
-                            "y": 12
+                            "x": 96,
+                            "y": 6
                         },
                         "node_id": "408fce8a-fbe6-4e32-b40b-c83c6594086c",
                         "port_number": 0
@@ -1068,8 +1050,8 @@
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "e0",
-                            "x": 27,
-                            "y": 55
+                            "x": 76,
+                            "y": -14
                         },
                         "node_id": "d890d663-7470-45de-8c0d-05d58e1018f5",
                         "port_number": 0
@@ -1542,7 +1524,7 @@
             {
                 "compute_id": "local",
                 "console": 5003,
-                "console_auto_start": false,
+                "console_auto_start": true,
                 "console_type": "telnet",
                 "custom_adapters": [],
                 "first_port_name": null,
@@ -2843,6 +2825,6 @@
     },
     "type": "topology",
     "variables": null,
-    "version": "2.2.7",
+    "version": "2.2.17",
     "zoom": 71
 }

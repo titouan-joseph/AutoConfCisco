@@ -2,18 +2,23 @@
 Auto configuration de routeur en poussant la configuration avec telnet
 
 ## Features 
- - [X] OSPF
+ - [X] IPv4 address
+ - [X] IPv6 address
+ - [X] OSPFv2
+ - [X] OSPFv3
  - [X] BGP
  - [X] MPLS - LDP
- - [ ] VRF
+ - [X] VRF
  - [X] Multithread
  - [X] Configuration de router / protocol en particulier
+ - [X] Test de ping automatique dans le backbone
+ - [ ] Test de ping entre VRF
 
 ## Architecture
  
 
 
-- OSPF(1) pour le papillon et labelisation des paquets
+- OSPF(1) pour le papillon et labellisation des paquets
 
 - OSPF(2) pour l'entreprise, pour parler dans son réseau
 
@@ -26,9 +31,9 @@ Auto configuration de routeur en poussant la configuration avec telnet
 
 ## Usage
 
-```bash
-usage: main_args.py [-h] [--router ROUTER] [--ospf] [--bgp] [--mpls] [--write]
-                    [--erase] [--interface INTERFACE]
+```
+usage: main_args.py [-h] [--router ROUTER] [--ospf] [--bgp] [--mpls] [--vrf]
+                    [--write] [--erase] [--interface INTERFACE]
                     jsonFile
 
 positional arguments:
@@ -41,6 +46,7 @@ optional arguments:
   --ospf, -o            Configure only OSPF
   --bgp, -b             Configure only BGP
   --mpls, -m            Configure only MPLS
+  --vrf, -v             Configure only VRF
   --write, -w           Write configuration att the end
   --erase, -e           Erase running configuration with default.cfg
   --interface INTERFACE, --int INTERFACE, -i INTERFACE
