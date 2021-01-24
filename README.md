@@ -53,3 +53,7 @@ optional arguments:
                         Configure only one interface, or all interface with
                         <all>
 ```
+
+## Amelioration
+
+ - Possibilité de mettre un service DHCP sur les interfaces (notamment pour les LAN)
