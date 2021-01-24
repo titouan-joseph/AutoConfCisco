@@ -26,7 +26,7 @@ class Configuration:
         self.sendCommand("conf t")
 
     def eraseRunningConfiguration(self):
-        print(f"{self.name} : erase running configuration")
+        print(f"{self.name} : erase running configuration \n")
         self.globalConfigMode()
         self.configureTerminal()
         with open("default.cfg", "r") as default_config:
@@ -48,7 +48,7 @@ class Configuration:
         self.sendCommand("end")
 
     def setIntDescription(self, interface, desc):
-        print(f"{self.name} : Set description to {interface} : {desc}")
+        print(f"{self.name} : Set description to {interface} : {desc} \n")
         self.interInInterfaceMode(interface)
         self.sendCommand(f"description \"{desc}\"")
 
@@ -101,7 +101,7 @@ class Configuration:
         self.sendCommand("end")
 
     def setVRFonOSPF(self, vrf_name, ospf_id, network, ospf_area, as_number):
-        print(f"{self.name} : Set VRF {vrf_name} on OSPF {ospf_area}")
+        print(f"{self.name} : Set VRF {vrf_name} on OSPF {ospf_area} \n")
         self.configureTerminal()
         self.sendCommand(f"router ospf {ospf_id} vrf {vrf_name}")
         self.sendCommand(f"redistribute bgp {as_number} subnets")
@@ -133,7 +133,7 @@ class Configuration:
         self.sendCommand("end")
 
     def setVRF(self, vrf_name, rd, rt_import: list, rt_export: list):
-        print(f"{self.name} : adding VRF {vrf_name}")
+        print(f"{self.name} : adding VRF {vrf_name} \n")
         self.configureTerminal()
         self.sendCommand(f"ip vrf {vrf_name}")
         self.sendCommand(f"rd {rd}")
@@ -144,13 +144,13 @@ class Configuration:
         self.sendCommand("end")
 
     def activateVRFonInterface(self, interface, vrf_name):
-        print(f"{self.name} : adding VRF {vrf_name} on {interface}")
+        print(f"{self.name} : adding VRF {vrf_name} on {interface} \n")
         self.interInInterfaceMode(interface)
         self.sendCommand(f"ip vrf forwarding {vrf_name}")
         self.sendCommand("end")
 
     def activateVPNonBGP(self, as_number, neighbor):
-        print(f"{self.name} : activate VPN on BGP as {as_number}")
+        print(f"{self.name} : activate VPN on BGP as {as_number} \n")
         self.configureTerminal()
         self.sendCommand(f"router bgp {as_number}")
         self.sendCommand("address-family vpnv4")
@@ -161,7 +161,7 @@ class Configuration:
         self.sendCommand("exit-address-family")
 
     def activateVRFonBGP(self, as_number, vrf_name, ospf_id):
-        print(f"{self.name} : activate VRF {vrf_name} on BGP {as_number}")
+        print(f"{self.name} : activate VRF {vrf_name} on BGP {as_number} \n")
         self.sendCommand(f"router bgp {as_number}")
         self.sendCommand(f"address-family ipv4 vrf {vrf_name}")
         # self.sendCommand("redistribute connected")

@@ -57,3 +57,6 @@ optional arguments:
 ## Amelioration
 
  - Possibilité de mettre un service DHCP sur les interfaces (notamment pour les LAN)
+ - Un script pour tester les connections VPN
+ - BGP en ipv6
+ - VRF en ipv6

@@ -448,6 +448,42 @@
                 "x": 654,
                 "y": -448,
                 "z": 2
+            },
+            {
+                "drawing_id": "84b1bc47-9761-4d83-90e7-c192d0095ce7",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg height=\"24\" width=\"57\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">LAN 1.1</text></svg>",
+                "x": -378,
+                "y": -481,
+                "z": 2
+            },
+            {
+                "drawing_id": "d32a7878-0c87-4a7b-b4e5-c2ffe939ddd8",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg height=\"24\" width=\"57\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">LAN 1.2</text></svg>",
+                "x": 423,
+                "y": -444,
+                "z": 2
+            },
+            {
+                "drawing_id": "1f01e3d2-4721-4934-b41c-125ee377663f",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg height=\"24\" width=\"57\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">LAN 2.1</text></svg>",
+                "x": -1049,
+                "y": -25,
+                "z": 2
+            },
+            {
+                "drawing_id": "64d682f9-7a6d-411b-8b3c-ec057b8bc2f2",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg height=\"24\" width=\"57\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">LAN 2.2</text></svg>",
+                "x": 261,
+                "y": 497,
+                "z": 2
             }
         ],
         "links": [
